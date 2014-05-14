@@ -1,0 +1,729 @@
+<!DOCTYPE HTML>
+<html lang="en-US" manifest="../manifest.appcache">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>Lock与ReentrantLock | Java并发编程学习笔记</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="xionglie">
+        <meta name="description" content="这是我两年前(2012-05)的学习笔记。">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../Chapter05/tryLock.html" />
+        
+        
+        <link rel="prev" href="../Chapter05/README.html" />
+        
+
+        <meta property="og:title" content="Lock与ReentrantLock | Java并发编程学习笔记">
+        <meta property="og:site_name" content="Java并发编程学习笔记">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/xionglie">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    </head>
+    <body>
+        
+
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+
+
+        
+    <div class="book" data-github="xionglie/note-learning-java-concurrency" data-level="5.1" data-basepath=".." data-revision="1400058897483">
+    <div class="book-header">
+    <!-- Actions Left -->
+    
+    <a href="https://github.com/xionglie/note-learning-java-concurrency" target="_blank" class="btn pull-left"><i class="fa fa-bookmark-o"></i></a>
+    
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+    <span id="font-settings-wrapper">
+        <a href="#" class="btn pull-left toggle-font-settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+	<div class="dropdown-caret">
+  <span class="caret-outer"></span>
+  <span class="caret-inner"></span>
+</div>
+
+	<div class="btn-group btn-block">
+		<button id="reduce-font-size" class="btn btn-default">A</button>
+		<button id="enlarge-font-size" class="btn btn-default">A</button>
+	</div>
+
+	<ul class="list-group font-family-list">
+		<li class="list-group-item" data-font="0">Serif</li>
+		<li class="list-group-item" data-font="1">Sans</li>
+	</ul>
+
+	<div class="btn-group btn-group-xs btn-block color-theme-list">
+	  <button type="button" class="btn btn-default" id="color-theme-preview-0" data-theme="0">White</button>
+	  <button type="button" class="btn btn-default" id="color-theme-preview-1" data-theme="1">Sepia</button>
+	  <button type="button" class="btn btn-default" id="color-theme-preview-2" data-theme="2">Night</button>
+	</div>
+</div>
+
+    </span>
+
+    <!-- Actions Right -->
+    
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+    
+
+    
+    <a href="https://github.com/xionglie/note-learning-java-concurrency/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/xionglie/note-learning-java-concurrency/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="../" >Java并发编程学习笔记</a>
+    </h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        <li>
+            <a href="https://github.com/xionglie" target="blank">About the author</a>
+        </li>
+        
+
+        
+        <li>
+            <a href="https://github.com/xionglie/note-learning-java-concurrency/issues" target="blank">Questions and Issues</a>
+        </li>
+        
+
+        
+        <li>
+            <a href="https://github.com/xionglie/note-learning-java-concurrency/edit/master/Chapter05/Lock-ReentrantLock.md" target="blank">Edit and Contribute</a>
+        </li>
+        
+
+        
+        <li class="divider"></li>
+        
+
+        <li data-level="0" data-path="index.html">
+            <a href="../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1" data-path="Chapter01/README.html">
+                
+                <a href="../Chapter01/README.html">
+                    <i class="fa fa-check"></i> <b>1.</b> 集合类
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="1.1" data-path="Chapter01/CommonSet.html">
+                            
+                            <a href="../Chapter01/CommonSet.html">
+                                <i class="fa fa-check"></i> <b>1.1.</b> 常用的集合结构
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.2" data-path="Chapter01/ThreadSafe.html">
+                            
+                            <a href="../Chapter01/ThreadSafe.html">
+                                <i class="fa fa-check"></i> <b>1.2.</b> 集合与线程安全
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.3" data-path="Chapter01/Queue.html">
+                            
+                            <a href="../Chapter01/Queue.html">
+                                <i class="fa fa-check"></i> <b>1.3.</b> 队列：Queue, BlockingQueue
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.4" data-path="Chapter01/Deque.html">
+                            
+                            <a href="../Chapter01/Deque.html">
+                                <i class="fa fa-check"></i> <b>1.4.</b> 并发Deque
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.5" data-path="Chapter01/More.html">
+                            
+                            <a href="../Chapter01/More.html">
+                                <i class="fa fa-check"></i> <b>1.5.</b> 更多阅读
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="2" data-path="Chapter02/README.html">
+                
+                <a href="../Chapter02/README.html">
+                    <i class="fa fa-check"></i> <b>2.</b> 原子操作类Atomic
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="2.1" data-path="Chapter02/HowToUse.html">
+                            
+                            <a href="../Chapter02/HowToUse.html">
+                                <i class="fa fa-check"></i> <b>2.1.</b> 典型应用:按顺序获取ID
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.2" data-path="Chapter02/Example.html">
+                            
+                            <a href="../Chapter02/Example.html">
+                                <i class="fa fa-check"></i> <b>2.2.</b> 示例
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="3" data-path="Chapter03/README.html">
+                
+                <a href="../Chapter03/README.html">
+                    <i class="fa fa-check"></i> <b>3.</b> 线程池Executor，ThreadPoolExecutor，Executors
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="3.1" data-path="Chapter03/TaskRun.html">
+                            
+                            <a href="../Chapter03/TaskRun.html">
+                                <i class="fa fa-check"></i> <b>3.1.</b> 任务执行的三种模式
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.2" data-path="Chapter03/ThreadPoolExecutor.html">
+                            
+                            <a href="../Chapter03/ThreadPoolExecutor.html">
+                                <i class="fa fa-check"></i> <b>3.2.</b> ThreadPoolExecutor
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.3" data-path="Chapter03/CreateThreadPool.html">
+                            
+                            <a href="../Chapter03/CreateThreadPool.html">
+                                <i class="fa fa-check"></i> <b>3.3.</b> Executors创建线程池
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.4" data-path="Chapter03/Example.html">
+                            
+                            <a href="../Chapter03/Example.html">
+                                <i class="fa fa-check"></i> <b>3.4.</b> 线程池创建示例
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="4" data-path="Chapter04/README.html">
+                
+                <a href="../Chapter04/README.html">
+                    <i class="fa fa-check"></i> <b>4.</b> 任务异步返回结果和取消关闭
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="4.1" data-path="Chapter04/CallableFuture.html">
+                            
+                            <a href="../Chapter04/CallableFuture.html">
+                                <i class="fa fa-check"></i> <b>4.1.</b> 携带结果的任务Callable与Future
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="4.2" data-path="Chapter04/TaskCancle.html">
+                            
+                            <a href="../Chapter04/TaskCancle.html">
+                                <i class="fa fa-check"></i> <b>4.2.</b> 任务取消
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="5" data-path="Chapter05/README.html">
+                
+                <a href="../Chapter05/README.html">
+                    <i class="fa fa-check"></i> <b>5.</b> 显式锁
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="5.1" data-path="Chapter05/Lock-ReentrantLock.html">
+                            
+                            <a href="../Chapter05/Lock-ReentrantLock.html">
+                                <i class="fa fa-check"></i> <b>5.1.</b> Lock与ReentrantLock
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.2" data-path="Chapter05/tryLock.html">
+                            
+                            <a href="../Chapter05/tryLock.html">
+                                <i class="fa fa-check"></i> <b>5.2.</b> 轮询锁和定时锁
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.3" data-path="Chapter05/lockInterruptibly.html">
+                            
+                            <a href="../Chapter05/lockInterruptibly.html">
+                                <i class="fa fa-check"></i> <b>5.3.</b> 可中断的锁
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.4" data-path="Chapter05/ReadWriteLock.html">
+                            
+                            <a href="../Chapter05/ReadWriteLock.html">
+                                <i class="fa fa-check"></i> <b>5.4.</b> 读-写锁
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="6" data-path="Chapter06/README.html">
+                
+                <a href="../Chapter06/README.html">
+                    <i class="fa fa-check"></i> <b>6.</b> 同步
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="6.1" data-path="Chapter06/CyclicBarrier-CountDownLatch.html">
+                            
+                            <a href="../Chapter06/CyclicBarrier-CountDownLatch.html">
+                                <i class="fa fa-check"></i> <b>6.1.</b> 栅栏CyclicBarrier与计数器CountDownLatch
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="6.2" data-path="Chapter06/Semaphore.html">
+                            
+                            <a href="../Chapter06/Semaphore.html">
+                                <i class="fa fa-check"></i> <b>6.2.</b> 信号量Semaphore
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="7" data-path="Chapter07/README.html">
+                
+                <a href="../Chapter07/README.html">
+                    <i class="fa fa-check"></i> <b>7.</b> ThreadLocal
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="7.1" data-path="Chapter07/jdk1.5ScourceCode.html">
+                            
+                            <a href="../Chapter07/jdk1.5ScourceCode.html">
+                                <i class="fa fa-check"></i> <b>7.1.</b> jdk1.5源码
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="7.2" data-path="Chapter07/Example.html">
+                            
+                            <a href="../Chapter07/Example.html">
+                                <i class="fa fa-check"></i> <b>7.2.</b> 例子
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="8" data-path="Chapter08/README.html">
+                
+                <a href="../Chapter08/README.html">
+                    <i class="fa fa-check"></i> <b>8.</b> 并行程序设计模式
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="8.1" data-path="Chapter09/Future.html">
+                            
+                            <a href="../Chapter09/Future.html">
+                                <i class="fa fa-check"></i> <b>8.1.</b> Future模式
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="8.2" data-path="Chapter09/MasterWorker.html">
+                            
+                            <a href="../Chapter09/MasterWorker.html">
+                                <i class="fa fa-check"></i> <b>8.2.</b> Master-Worker模式
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="8.3" data-path="Chapter09/GuardedSuspension.html">
+                            
+                            <a href="../Chapter09/GuardedSuspension.html">
+                                <i class="fa fa-check"></i> <b>8.3.</b> Guarded-Suspension模式
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="8.4" data-path="Chapter09/Immutable.html">
+                            
+                            <a href="../Chapter09/Immutable.html">
+                                <i class="fa fa-check"></i> <b>8.4.</b> 不变模式immutable
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="8.5" data-path="Chapter09/Producter-Consumer.html">
+                            
+                            <a href="../Chapter09/Producter-Consumer.html">
+                                <i class="fa fa-check"></i> <b>8.5.</b> 生产者－消费者模式
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="9" data-path="Chapter09/README.html">
+                
+                <a href="../Chapter09/README.html">
+                    <i class="fa fa-check"></i> <b>9.</b> 并发控制方法
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="9.1" data-path="Chapter09/volatile.html">
+                            
+                            <a href="../Chapter09/volatile.html">
+                                <i class="fa fa-check"></i> <b>9.1.</b> Java内存模型与volatile    
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="9.2" data-path="Chapter09/synchronized.html">
+                            
+                            <a href="../Chapter09/synchronized.html">
+                                <i class="fa fa-check"></i> <b>9.2.</b> 同步关键字synchronized
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="9.3" data-path="Chapter09/ReentranLock.html">
+                            
+                            <a href="../Chapter09/ReentranLock.html">
+                                <i class="fa fa-check"></i> <b>9.3.</b> ReentranLock重入锁
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="9.4" data-path="Chapter09/ReadWriteLock.html">
+                            
+                            <a href="../Chapter09/ReadWriteLock.html">
+                                <i class="fa fa-check"></i> <b>9.4.</b> ReadWriteLock读写锁
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="9.5" data-path="Chapter09/Condition.html">
+                            
+                            <a href="../Chapter09/Condition.html">
+                                <i class="fa fa-check"></i> <b>9.5.</b> Condition对象
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="9.6" data-path="Chapter09/Semaphore.html">
+                            
+                            <a href="../Chapter09/Semaphore.html">
+                                <i class="fa fa-check"></i> <b>9.6.</b> Semaphore信号量
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="9.7" data-path="Chapter09/ThreadLocal.html">
+                            
+                            <a href="../Chapter09/ThreadLocal.html">
+                                <i class="fa fa-check"></i> <b>9.7.</b> ThreadLocal线程局部变量
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="10" data-path="Chapter10/README.html">
+                
+                <a href="../Chapter10/README.html">
+                    <i class="fa fa-check"></i> <b>10.</b> 并发框架Amino
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="11" data-path="Chapter11/README.html">
+                
+                <a href="../Chapter11/README.html">
+                    <i class="fa fa-check"></i> <b>11.</b> 参考资料
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="12" data-path="Chapter12/README.html">
+                
+                <a href="../Chapter12/README.html">
+                    <i class="fa fa-check"></i> <b>12.</b> 其它-线程状态
+                </a>
+                
+                
+            </li>
+        
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank">Generated using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="page-wrapper" tabindex="-1">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 48.888888888888886%;min-width: 46.666666666666664%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../Chapter01/README.html" title="集合类" class="chapter done new-chapter" data-progress="1" style="left: 2.2222222222222223%;"></a>
+    
+        <a href="../Chapter01/CommonSet.html" title="常用的集合结构" class="chapter done " data-progress="1.1" style="left: 4.444444444444445%;"></a>
+    
+        <a href="../Chapter01/ThreadSafe.html" title="集合与线程安全" class="chapter done " data-progress="1.2" style="left: 6.666666666666667%;"></a>
+    
+        <a href="../Chapter01/Queue.html" title="队列：Queue, BlockingQueue" class="chapter done " data-progress="1.3" style="left: 8.88888888888889%;"></a>
+    
+        <a href="../Chapter01/Deque.html" title="并发Deque" class="chapter done " data-progress="1.4" style="left: 11.11111111111111%;"></a>
+    
+        <a href="../Chapter01/More.html" title="更多阅读" class="chapter done " data-progress="1.5" style="left: 13.333333333333334%;"></a>
+    
+        <a href="../Chapter10/README.html" title="并发框架Amino" class="chapter done " data-progress="10" style="left: 15.555555555555555%;"></a>
+    
+        <a href="../Chapter11/README.html" title="参考资料" class="chapter done " data-progress="11" style="left: 17.77777777777778%;"></a>
+    
+        <a href="../Chapter12/README.html" title="其它-线程状态" class="chapter done " data-progress="12" style="left: 20%;"></a>
+    
+        <a href="../Chapter02/README.html" title="原子操作类Atomic" class="chapter done new-chapter" data-progress="2" style="left: 22.22222222222222%;"></a>
+    
+        <a href="../Chapter02/HowToUse.html" title="典型应用:按顺序获取ID" class="chapter done " data-progress="2.1" style="left: 24.444444444444443%;"></a>
+    
+        <a href="../Chapter02/Example.html" title="示例" class="chapter done " data-progress="2.2" style="left: 26.666666666666668%;"></a>
+    
+        <a href="../Chapter03/README.html" title="线程池Executor，ThreadPoolExecutor，Executors" class="chapter done new-chapter" data-progress="3" style="left: 28.88888888888889%;"></a>
+    
+        <a href="../Chapter03/TaskRun.html" title="任务执行的三种模式" class="chapter done " data-progress="3.1" style="left: 31.11111111111111%;"></a>
+    
+        <a href="../Chapter03/ThreadPoolExecutor.html" title="ThreadPoolExecutor" class="chapter done " data-progress="3.2" style="left: 33.333333333333336%;"></a>
+    
+        <a href="../Chapter03/CreateThreadPool.html" title="Executors创建线程池" class="chapter done " data-progress="3.3" style="left: 35.55555555555556%;"></a>
+    
+        <a href="../Chapter03/Example.html" title="线程池创建示例" class="chapter done " data-progress="3.4" style="left: 37.77777777777778%;"></a>
+    
+        <a href="../Chapter04/README.html" title="任务异步返回结果和取消关闭" class="chapter done new-chapter" data-progress="4" style="left: 40%;"></a>
+    
+        <a href="../Chapter04/CallableFuture.html" title="携带结果的任务Callable与Future" class="chapter done " data-progress="4.1" style="left: 42.22222222222222%;"></a>
+    
+        <a href="../Chapter04/TaskCancle.html" title="任务取消" class="chapter done " data-progress="4.2" style="left: 44.44444444444444%;"></a>
+    
+        <a href="../Chapter05/README.html" title="显式锁" class="chapter done new-chapter" data-progress="5" style="left: 46.666666666666664%;"></a>
+    
+        <a href="../Chapter05/Lock-ReentrantLock.html" title="Lock与ReentrantLock" class="chapter done " data-progress="5.1" style="left: 48.888888888888886%;"></a>
+    
+        <a href="../Chapter05/tryLock.html" title="轮询锁和定时锁" class="chapter  " data-progress="5.2" style="left: 51.111111111111114%;"></a>
+    
+        <a href="../Chapter05/lockInterruptibly.html" title="可中断的锁" class="chapter  " data-progress="5.3" style="left: 53.333333333333336%;"></a>
+    
+        <a href="../Chapter05/ReadWriteLock.html" title="读-写锁" class="chapter  " data-progress="5.4" style="left: 55.55555555555556%;"></a>
+    
+        <a href="../Chapter06/README.html" title="同步" class="chapter  new-chapter" data-progress="6" style="left: 57.77777777777778%;"></a>
+    
+        <a href="../Chapter06/CyclicBarrier-CountDownLatch.html" title="栅栏CyclicBarrier与计数器CountDownLatch" class="chapter  " data-progress="6.1" style="left: 60%;"></a>
+    
+        <a href="../Chapter06/Semaphore.html" title="信号量Semaphore" class="chapter  " data-progress="6.2" style="left: 62.22222222222222%;"></a>
+    
+        <a href="../Chapter07/README.html" title="ThreadLocal" class="chapter  new-chapter" data-progress="7" style="left: 64.44444444444444%;"></a>
+    
+        <a href="../Chapter07/jdk1.5ScourceCode.html" title="jdk1.5源码" class="chapter  " data-progress="7.1" style="left: 66.66666666666667%;"></a>
+    
+        <a href="../Chapter07/Example.html" title="例子" class="chapter  " data-progress="7.2" style="left: 68.88888888888889%;"></a>
+    
+        <a href="../Chapter08/README.html" title="并行程序设计模式" class="chapter  new-chapter" data-progress="8" style="left: 71.11111111111111%;"></a>
+    
+        <a href="../Chapter09/Future.html" title="Future模式" class="chapter  " data-progress="8.1" style="left: 73.33333333333333%;"></a>
+    
+        <a href="../Chapter09/MasterWorker.html" title="Master-Worker模式" class="chapter  " data-progress="8.2" style="left: 75.55555555555556%;"></a>
+    
+        <a href="../Chapter09/GuardedSuspension.html" title="Guarded-Suspension模式" class="chapter  " data-progress="8.3" style="left: 77.77777777777777%;"></a>
+    
+        <a href="../Chapter09/Immutable.html" title="不变模式immutable" class="chapter  " data-progress="8.4" style="left: 80%;"></a>
+    
+        <a href="../Chapter09/Producter-Consumer.html" title="生产者－消费者模式" class="chapter  " data-progress="8.5" style="left: 82.22222222222223%;"></a>
+    
+        <a href="../Chapter09/README.html" title="并发控制方法" class="chapter  new-chapter" data-progress="9" style="left: 84.44444444444444%;"></a>
+    
+        <a href="../Chapter09/volatile.html" title="Java内存模型与volatile    " class="chapter  " data-progress="9.1" style="left: 86.66666666666667%;"></a>
+    
+        <a href="../Chapter09/synchronized.html" title="同步关键字synchronized" class="chapter  " data-progress="9.2" style="left: 88.88888888888889%;"></a>
+    
+        <a href="../Chapter09/ReentranLock.html" title="ReentranLock重入锁" class="chapter  " data-progress="9.3" style="left: 91.11111111111111%;"></a>
+    
+        <a href="../Chapter09/ReadWriteLock.html" title="ReadWriteLock读写锁" class="chapter  " data-progress="9.4" style="left: 93.33333333333333%;"></a>
+    
+        <a href="../Chapter09/Condition.html" title="Condition对象" class="chapter  " data-progress="9.5" style="left: 95.55555555555556%;"></a>
+    
+        <a href="../Chapter09/Semaphore.html" title="Semaphore信号量" class="chapter  " data-progress="9.6" style="left: 97.77777777777777%;"></a>
+    
+        <a href="../Chapter09/ThreadLocal.html" title="ThreadLocal线程局部变量" class="chapter  " data-progress="9.7" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_13">
+                    
+                        <h1 id="lock-reentrantlock">Lock与ReentrantLock</h1>
+<p>Lock接口中定义了一组抽象的加锁机制。Lock 实现提供了比使用 synchronized 方法和语句可获得的更广泛的锁定操作。</p>
+<p>ReentrantLock实现了Lock接口，并提供了与synchronized相同的互斥性和内存可见性。</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Lock</span> {</span> 
+<span class="hljs-keyword">void</span> lock(); 
+<span class="hljs-comment">//如果当前线程未被中断，则获取锁定。 </span>
+    <span class="hljs-keyword">void</span> lockInterruptibly() <span class="hljs-keyword">throws</span> InterruptedException; 
+    <span class="hljs-keyword">boolean</span> tryLock(); 
+    <span class="hljs-keyword">boolean</span> tryLock(<span class="hljs-keyword">long</span> timeout, TimeUnit unit) 
+    <span class="hljs-keyword">throws</span> InterruptedException; 
+    <span class="hljs-keyword">void</span> unlock(); 
+    Condition newCondition(); 
+}
+</code></pre>
+<p>使用ReentrantLock来保护对象状态。</p>
+<pre><code class="lang-java">Lock lock = <span class="hljs-keyword">new</span> ReentrantLock(); 
+lock.lock(); 
+<span class="hljs-keyword">try</span> { 
+    <span class="hljs-comment">//相关操作</span>
+} <span class="hljs-keyword">finally</span> { 
+    lock.unlock();  <span class="hljs-comment">//一定要释放锁</span>
+}
+</code></pre>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../Chapter05/README.html" class="navigation navigation-prev "><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../Chapter05/tryLock.html" class="navigation navigation-next "><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../gitbook/app.js"></script>
+        
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mixpanel/plugin.js"></script>
+    
+
+    
+    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {};
+    gitbook.start(config);
+});
+</script>
+
+    </body>
+</html>
