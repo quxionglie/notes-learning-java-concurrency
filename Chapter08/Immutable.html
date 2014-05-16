@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>并发Deque | Java并发编程学习笔记</title>
+        <title>不变模式immutable | Java并发编程学习笔记</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -13,13 +13,13 @@
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../Chapter01/More.html" />
+        <link rel="next" href="../Chapter08/Producter-Consumer.html" />
         
         
-        <link rel="prev" href="../Chapter01/Queue.html" />
+        <link rel="prev" href="../Chapter08/GuardedSuspension.html" />
         
 
-        <meta property="og:title" content="并发Deque | Java并发编程学习笔记">
+        <meta property="og:title" content="不变模式immutable | Java并发编程学习笔记">
         <meta property="og:site_name" content="Java并发编程学习笔记">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
@@ -42,7 +42,7 @@
 
 
         
-    <div class="book" data-github="xionglie/note-learning-java-concurrency" data-level="1.4" data-basepath=".." data-revision="1400225192853">
+    <div class="book" data-github="xionglie/note-learning-java-concurrency" data-level="8.4" data-basepath=".." data-revision="1400225192853">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -120,7 +120,7 @@
 
         
         <li>
-            <a href="https://github.com/xionglie/note-learning-java-concurrency/edit/master/Chapter01/Deque.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/xionglie/note-learning-java-concurrency/edit/master/Chapter08/Immutable.md" target="blank">Edit and Contribute</a>
         </li>
         
 
@@ -555,7 +555,7 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 11.11111111111111%;min-width: 8.88888888888889%;"></div>
+        <div class="inner" style="width: 80%;min-width: 77.77777777777777%;"></div>
     </div>
     <div class="chapters">
     
@@ -571,67 +571,67 @@
     
         <a href="../Chapter01/Deque.html" title="并发Deque" class="chapter done " data-progress="1.4" style="left: 11.11111111111111%;"></a>
     
-        <a href="../Chapter01/More.html" title="更多阅读" class="chapter  " data-progress="1.5" style="left: 13.333333333333334%;"></a>
+        <a href="../Chapter01/More.html" title="更多阅读" class="chapter done " data-progress="1.5" style="left: 13.333333333333334%;"></a>
     
-        <a href="../Chapter10/README.html" title="并发框架Amino" class="chapter  " data-progress="10" style="left: 15.555555555555555%;"></a>
+        <a href="../Chapter10/README.html" title="并发框架Amino" class="chapter done " data-progress="10" style="left: 15.555555555555555%;"></a>
     
-        <a href="../Chapter11/README.html" title="参考资料" class="chapter  " data-progress="11" style="left: 17.77777777777778%;"></a>
+        <a href="../Chapter11/README.html" title="参考资料" class="chapter done " data-progress="11" style="left: 17.77777777777778%;"></a>
     
-        <a href="../Chapter12/README.html" title="其它-线程状态" class="chapter  " data-progress="12" style="left: 20%;"></a>
+        <a href="../Chapter12/README.html" title="其它-线程状态" class="chapter done " data-progress="12" style="left: 20%;"></a>
     
-        <a href="../Chapter02/README.html" title="原子操作类Atomic" class="chapter  new-chapter" data-progress="2" style="left: 22.22222222222222%;"></a>
+        <a href="../Chapter02/README.html" title="原子操作类Atomic" class="chapter done new-chapter" data-progress="2" style="left: 22.22222222222222%;"></a>
     
-        <a href="../Chapter02/HowToUse.html" title="典型应用:按顺序获取ID" class="chapter  " data-progress="2.1" style="left: 24.444444444444443%;"></a>
+        <a href="../Chapter02/HowToUse.html" title="典型应用:按顺序获取ID" class="chapter done " data-progress="2.1" style="left: 24.444444444444443%;"></a>
     
-        <a href="../Chapter02/Example.html" title="示例" class="chapter  " data-progress="2.2" style="left: 26.666666666666668%;"></a>
+        <a href="../Chapter02/Example.html" title="示例" class="chapter done " data-progress="2.2" style="left: 26.666666666666668%;"></a>
     
-        <a href="../Chapter03/README.html" title="线程池Executor，ThreadPoolExecutor，Executors" class="chapter  new-chapter" data-progress="3" style="left: 28.88888888888889%;"></a>
+        <a href="../Chapter03/README.html" title="线程池Executor，ThreadPoolExecutor，Executors" class="chapter done new-chapter" data-progress="3" style="left: 28.88888888888889%;"></a>
     
-        <a href="../Chapter03/TaskRun.html" title="任务执行的三种模式" class="chapter  " data-progress="3.1" style="left: 31.11111111111111%;"></a>
+        <a href="../Chapter03/TaskRun.html" title="任务执行的三种模式" class="chapter done " data-progress="3.1" style="left: 31.11111111111111%;"></a>
     
-        <a href="../Chapter03/ThreadPoolExecutor.html" title="ThreadPoolExecutor" class="chapter  " data-progress="3.2" style="left: 33.333333333333336%;"></a>
+        <a href="../Chapter03/ThreadPoolExecutor.html" title="ThreadPoolExecutor" class="chapter done " data-progress="3.2" style="left: 33.333333333333336%;"></a>
     
-        <a href="../Chapter03/CreateThreadPool.html" title="Executors创建线程池" class="chapter  " data-progress="3.3" style="left: 35.55555555555556%;"></a>
+        <a href="../Chapter03/CreateThreadPool.html" title="Executors创建线程池" class="chapter done " data-progress="3.3" style="left: 35.55555555555556%;"></a>
     
-        <a href="../Chapter03/Example.html" title="线程池创建示例" class="chapter  " data-progress="3.4" style="left: 37.77777777777778%;"></a>
+        <a href="../Chapter03/Example.html" title="线程池创建示例" class="chapter done " data-progress="3.4" style="left: 37.77777777777778%;"></a>
     
-        <a href="../Chapter04/README.html" title="任务异步返回结果和取消关闭" class="chapter  new-chapter" data-progress="4" style="left: 40%;"></a>
+        <a href="../Chapter04/README.html" title="任务异步返回结果和取消关闭" class="chapter done new-chapter" data-progress="4" style="left: 40%;"></a>
     
-        <a href="../Chapter04/CallableFuture.html" title="携带结果的任务Callable与Future" class="chapter  " data-progress="4.1" style="left: 42.22222222222222%;"></a>
+        <a href="../Chapter04/CallableFuture.html" title="携带结果的任务Callable与Future" class="chapter done " data-progress="4.1" style="left: 42.22222222222222%;"></a>
     
-        <a href="../Chapter04/TaskCancle.html" title="任务取消" class="chapter  " data-progress="4.2" style="left: 44.44444444444444%;"></a>
+        <a href="../Chapter04/TaskCancle.html" title="任务取消" class="chapter done " data-progress="4.2" style="left: 44.44444444444444%;"></a>
     
-        <a href="../Chapter05/README.html" title="显式锁" class="chapter  new-chapter" data-progress="5" style="left: 46.666666666666664%;"></a>
+        <a href="../Chapter05/README.html" title="显式锁" class="chapter done new-chapter" data-progress="5" style="left: 46.666666666666664%;"></a>
     
-        <a href="../Chapter05/Lock-ReentrantLock.html" title="Lock与ReentrantLock" class="chapter  " data-progress="5.1" style="left: 48.888888888888886%;"></a>
+        <a href="../Chapter05/Lock-ReentrantLock.html" title="Lock与ReentrantLock" class="chapter done " data-progress="5.1" style="left: 48.888888888888886%;"></a>
     
-        <a href="../Chapter05/tryLock.html" title="轮询锁和定时锁" class="chapter  " data-progress="5.2" style="left: 51.111111111111114%;"></a>
+        <a href="../Chapter05/tryLock.html" title="轮询锁和定时锁" class="chapter done " data-progress="5.2" style="left: 51.111111111111114%;"></a>
     
-        <a href="../Chapter05/lockInterruptibly.html" title="可中断的锁" class="chapter  " data-progress="5.3" style="left: 53.333333333333336%;"></a>
+        <a href="../Chapter05/lockInterruptibly.html" title="可中断的锁" class="chapter done " data-progress="5.3" style="left: 53.333333333333336%;"></a>
     
-        <a href="../Chapter05/ReadWriteLock.html" title="读-写锁" class="chapter  " data-progress="5.4" style="left: 55.55555555555556%;"></a>
+        <a href="../Chapter05/ReadWriteLock.html" title="读-写锁" class="chapter done " data-progress="5.4" style="left: 55.55555555555556%;"></a>
     
-        <a href="../Chapter06/README.html" title="同步" class="chapter  new-chapter" data-progress="6" style="left: 57.77777777777778%;"></a>
+        <a href="../Chapter06/README.html" title="同步" class="chapter done new-chapter" data-progress="6" style="left: 57.77777777777778%;"></a>
     
-        <a href="../Chapter06/CyclicBarrier-CountDownLatch.html" title="栅栏CyclicBarrier与计数器CountDownLatch" class="chapter  " data-progress="6.1" style="left: 60%;"></a>
+        <a href="../Chapter06/CyclicBarrier-CountDownLatch.html" title="栅栏CyclicBarrier与计数器CountDownLatch" class="chapter done " data-progress="6.1" style="left: 60%;"></a>
     
-        <a href="../Chapter06/Semaphore.html" title="信号量Semaphore" class="chapter  " data-progress="6.2" style="left: 62.22222222222222%;"></a>
+        <a href="../Chapter06/Semaphore.html" title="信号量Semaphore" class="chapter done " data-progress="6.2" style="left: 62.22222222222222%;"></a>
     
-        <a href="../Chapter07/README.html" title="ThreadLocal" class="chapter  new-chapter" data-progress="7" style="left: 64.44444444444444%;"></a>
+        <a href="../Chapter07/README.html" title="ThreadLocal" class="chapter done new-chapter" data-progress="7" style="left: 64.44444444444444%;"></a>
     
-        <a href="../Chapter07/jdk1.5ScourceCode.html" title="jdk1.5源码" class="chapter  " data-progress="7.1" style="left: 66.66666666666667%;"></a>
+        <a href="../Chapter07/jdk1.5ScourceCode.html" title="jdk1.5源码" class="chapter done " data-progress="7.1" style="left: 66.66666666666667%;"></a>
     
-        <a href="../Chapter07/Example.html" title="例子" class="chapter  " data-progress="7.2" style="left: 68.88888888888889%;"></a>
+        <a href="../Chapter07/Example.html" title="例子" class="chapter done " data-progress="7.2" style="left: 68.88888888888889%;"></a>
     
-        <a href="../Chapter08/README.html" title="并行程序设计模式" class="chapter  new-chapter" data-progress="8" style="left: 71.11111111111111%;"></a>
+        <a href="../Chapter08/README.html" title="并行程序设计模式" class="chapter done new-chapter" data-progress="8" style="left: 71.11111111111111%;"></a>
     
-        <a href="../Chapter08/Future.html" title="Future模式" class="chapter  " data-progress="8.1" style="left: 73.33333333333333%;"></a>
+        <a href="../Chapter08/Future.html" title="Future模式" class="chapter done " data-progress="8.1" style="left: 73.33333333333333%;"></a>
     
-        <a href="../Chapter08/MasterWorker.html" title="Master-Worker模式" class="chapter  " data-progress="8.2" style="left: 75.55555555555556%;"></a>
+        <a href="../Chapter08/MasterWorker.html" title="Master-Worker模式" class="chapter done " data-progress="8.2" style="left: 75.55555555555556%;"></a>
     
-        <a href="../Chapter08/GuardedSuspension.html" title="Guarded-Suspension模式" class="chapter  " data-progress="8.3" style="left: 77.77777777777777%;"></a>
+        <a href="../Chapter08/GuardedSuspension.html" title="Guarded-Suspension模式" class="chapter done " data-progress="8.3" style="left: 77.77777777777777%;"></a>
     
-        <a href="../Chapter08/Immutable.html" title="不变模式immutable" class="chapter  " data-progress="8.4" style="left: 80%;"></a>
+        <a href="../Chapter08/Immutable.html" title="不变模式immutable" class="chapter done " data-progress="8.4" style="left: 80%;"></a>
     
         <a href="../Chapter08/Producter-Consumer.html" title="生产者－消费者模式" class="chapter  " data-progress="8.5" style="left: 82.22222222222223%;"></a>
     
@@ -656,10 +656,36 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_24">
+                    <section class="normal" id="section-gitbook_31">
                     
-                        <h1 id="-deque">并发Deque</h1>
-<p>在JDK6中，还提供了一种双端队列(Double-Ended Queue),简称Deque。Deque允许在队列的头部或尾部进行出队和入队操作。</p>
+                        <h1 id="-immutable">不变模式immutable</h1>
+<p>当对象产生后，不发生任何改变。</p>
+<p>适合场景：</p>
+<p>(1)    当对象被创建后，其内部状态和数据不再发生变化。</p>
+<p>(2)    对象需要共享、被多线程频繁访问。</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Product</span> {</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String  no;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String name;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">double</span> price;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title">Product</span>(String no, String name, <span class="hljs-keyword">double</span> price) {
+        <span class="hljs-keyword">super</span>();
+        <span class="hljs-keyword">this</span>.no = no;
+        <span class="hljs-keyword">this</span>.name = name;
+        <span class="hljs-keyword">this</span>.price = price;
+    }
+
+    <span class="hljs-keyword">public</span> String <span class="hljs-title">getNo</span>() {
+        <span class="hljs-keyword">return</span> no;
+    }
+    <span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span>() {
+        <span class="hljs-keyword">return</span> name;
+    }
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">getPrice</span>() {
+        <span class="hljs-keyword">return</span> price;
+    }
+}
+</code></pre>
 
                     
                     </section>
@@ -669,10 +695,10 @@
         </div>
 
         
-        <a href="../Chapter01/Queue.html" class="navigation navigation-prev "><i class="fa fa-angle-left"></i></a>
+        <a href="../Chapter08/GuardedSuspension.html" class="navigation navigation-prev "><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../Chapter01/More.html" class="navigation navigation-next "><i class="fa fa-angle-right"></i></a>
+        <a href="../Chapter08/Producter-Consumer.html" class="navigation navigation-next "><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

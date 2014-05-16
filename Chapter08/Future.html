@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>并发Deque | Java并发编程学习笔记</title>
+        <title>Future模式 | Java并发编程学习笔记</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -13,13 +13,13 @@
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../Chapter01/More.html" />
+        <link rel="next" href="../Chapter08/MasterWorker.html" />
         
         
-        <link rel="prev" href="../Chapter01/Queue.html" />
+        <link rel="prev" href="../Chapter08/README.html" />
         
 
-        <meta property="og:title" content="并发Deque | Java并发编程学习笔记">
+        <meta property="og:title" content="Future模式 | Java并发编程学习笔记">
         <meta property="og:site_name" content="Java并发编程学习笔记">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
@@ -42,7 +42,7 @@
 
 
         
-    <div class="book" data-github="xionglie/note-learning-java-concurrency" data-level="1.4" data-basepath=".." data-revision="1400225192853">
+    <div class="book" data-github="xionglie/note-learning-java-concurrency" data-level="8.1" data-basepath=".." data-revision="1400225192853">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -120,7 +120,7 @@
 
         
         <li>
-            <a href="https://github.com/xionglie/note-learning-java-concurrency/edit/master/Chapter01/Deque.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/xionglie/note-learning-java-concurrency/edit/master/Chapter08/Future.md" target="blank">Edit and Contribute</a>
         </li>
         
 
@@ -555,7 +555,7 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 11.11111111111111%;min-width: 8.88888888888889%;"></div>
+        <div class="inner" style="width: 73.33333333333333%;min-width: 71.11111111111111%;"></div>
     </div>
     <div class="chapters">
     
@@ -571,61 +571,61 @@
     
         <a href="../Chapter01/Deque.html" title="并发Deque" class="chapter done " data-progress="1.4" style="left: 11.11111111111111%;"></a>
     
-        <a href="../Chapter01/More.html" title="更多阅读" class="chapter  " data-progress="1.5" style="left: 13.333333333333334%;"></a>
+        <a href="../Chapter01/More.html" title="更多阅读" class="chapter done " data-progress="1.5" style="left: 13.333333333333334%;"></a>
     
-        <a href="../Chapter10/README.html" title="并发框架Amino" class="chapter  " data-progress="10" style="left: 15.555555555555555%;"></a>
+        <a href="../Chapter10/README.html" title="并发框架Amino" class="chapter done " data-progress="10" style="left: 15.555555555555555%;"></a>
     
-        <a href="../Chapter11/README.html" title="参考资料" class="chapter  " data-progress="11" style="left: 17.77777777777778%;"></a>
+        <a href="../Chapter11/README.html" title="参考资料" class="chapter done " data-progress="11" style="left: 17.77777777777778%;"></a>
     
-        <a href="../Chapter12/README.html" title="其它-线程状态" class="chapter  " data-progress="12" style="left: 20%;"></a>
+        <a href="../Chapter12/README.html" title="其它-线程状态" class="chapter done " data-progress="12" style="left: 20%;"></a>
     
-        <a href="../Chapter02/README.html" title="原子操作类Atomic" class="chapter  new-chapter" data-progress="2" style="left: 22.22222222222222%;"></a>
+        <a href="../Chapter02/README.html" title="原子操作类Atomic" class="chapter done new-chapter" data-progress="2" style="left: 22.22222222222222%;"></a>
     
-        <a href="../Chapter02/HowToUse.html" title="典型应用:按顺序获取ID" class="chapter  " data-progress="2.1" style="left: 24.444444444444443%;"></a>
+        <a href="../Chapter02/HowToUse.html" title="典型应用:按顺序获取ID" class="chapter done " data-progress="2.1" style="left: 24.444444444444443%;"></a>
     
-        <a href="../Chapter02/Example.html" title="示例" class="chapter  " data-progress="2.2" style="left: 26.666666666666668%;"></a>
+        <a href="../Chapter02/Example.html" title="示例" class="chapter done " data-progress="2.2" style="left: 26.666666666666668%;"></a>
     
-        <a href="../Chapter03/README.html" title="线程池Executor，ThreadPoolExecutor，Executors" class="chapter  new-chapter" data-progress="3" style="left: 28.88888888888889%;"></a>
+        <a href="../Chapter03/README.html" title="线程池Executor，ThreadPoolExecutor，Executors" class="chapter done new-chapter" data-progress="3" style="left: 28.88888888888889%;"></a>
     
-        <a href="../Chapter03/TaskRun.html" title="任务执行的三种模式" class="chapter  " data-progress="3.1" style="left: 31.11111111111111%;"></a>
+        <a href="../Chapter03/TaskRun.html" title="任务执行的三种模式" class="chapter done " data-progress="3.1" style="left: 31.11111111111111%;"></a>
     
-        <a href="../Chapter03/ThreadPoolExecutor.html" title="ThreadPoolExecutor" class="chapter  " data-progress="3.2" style="left: 33.333333333333336%;"></a>
+        <a href="../Chapter03/ThreadPoolExecutor.html" title="ThreadPoolExecutor" class="chapter done " data-progress="3.2" style="left: 33.333333333333336%;"></a>
     
-        <a href="../Chapter03/CreateThreadPool.html" title="Executors创建线程池" class="chapter  " data-progress="3.3" style="left: 35.55555555555556%;"></a>
+        <a href="../Chapter03/CreateThreadPool.html" title="Executors创建线程池" class="chapter done " data-progress="3.3" style="left: 35.55555555555556%;"></a>
     
-        <a href="../Chapter03/Example.html" title="线程池创建示例" class="chapter  " data-progress="3.4" style="left: 37.77777777777778%;"></a>
+        <a href="../Chapter03/Example.html" title="线程池创建示例" class="chapter done " data-progress="3.4" style="left: 37.77777777777778%;"></a>
     
-        <a href="../Chapter04/README.html" title="任务异步返回结果和取消关闭" class="chapter  new-chapter" data-progress="4" style="left: 40%;"></a>
+        <a href="../Chapter04/README.html" title="任务异步返回结果和取消关闭" class="chapter done new-chapter" data-progress="4" style="left: 40%;"></a>
     
-        <a href="../Chapter04/CallableFuture.html" title="携带结果的任务Callable与Future" class="chapter  " data-progress="4.1" style="left: 42.22222222222222%;"></a>
+        <a href="../Chapter04/CallableFuture.html" title="携带结果的任务Callable与Future" class="chapter done " data-progress="4.1" style="left: 42.22222222222222%;"></a>
     
-        <a href="../Chapter04/TaskCancle.html" title="任务取消" class="chapter  " data-progress="4.2" style="left: 44.44444444444444%;"></a>
+        <a href="../Chapter04/TaskCancle.html" title="任务取消" class="chapter done " data-progress="4.2" style="left: 44.44444444444444%;"></a>
     
-        <a href="../Chapter05/README.html" title="显式锁" class="chapter  new-chapter" data-progress="5" style="left: 46.666666666666664%;"></a>
+        <a href="../Chapter05/README.html" title="显式锁" class="chapter done new-chapter" data-progress="5" style="left: 46.666666666666664%;"></a>
     
-        <a href="../Chapter05/Lock-ReentrantLock.html" title="Lock与ReentrantLock" class="chapter  " data-progress="5.1" style="left: 48.888888888888886%;"></a>
+        <a href="../Chapter05/Lock-ReentrantLock.html" title="Lock与ReentrantLock" class="chapter done " data-progress="5.1" style="left: 48.888888888888886%;"></a>
     
-        <a href="../Chapter05/tryLock.html" title="轮询锁和定时锁" class="chapter  " data-progress="5.2" style="left: 51.111111111111114%;"></a>
+        <a href="../Chapter05/tryLock.html" title="轮询锁和定时锁" class="chapter done " data-progress="5.2" style="left: 51.111111111111114%;"></a>
     
-        <a href="../Chapter05/lockInterruptibly.html" title="可中断的锁" class="chapter  " data-progress="5.3" style="left: 53.333333333333336%;"></a>
+        <a href="../Chapter05/lockInterruptibly.html" title="可中断的锁" class="chapter done " data-progress="5.3" style="left: 53.333333333333336%;"></a>
     
-        <a href="../Chapter05/ReadWriteLock.html" title="读-写锁" class="chapter  " data-progress="5.4" style="left: 55.55555555555556%;"></a>
+        <a href="../Chapter05/ReadWriteLock.html" title="读-写锁" class="chapter done " data-progress="5.4" style="left: 55.55555555555556%;"></a>
     
-        <a href="../Chapter06/README.html" title="同步" class="chapter  new-chapter" data-progress="6" style="left: 57.77777777777778%;"></a>
+        <a href="../Chapter06/README.html" title="同步" class="chapter done new-chapter" data-progress="6" style="left: 57.77777777777778%;"></a>
     
-        <a href="../Chapter06/CyclicBarrier-CountDownLatch.html" title="栅栏CyclicBarrier与计数器CountDownLatch" class="chapter  " data-progress="6.1" style="left: 60%;"></a>
+        <a href="../Chapter06/CyclicBarrier-CountDownLatch.html" title="栅栏CyclicBarrier与计数器CountDownLatch" class="chapter done " data-progress="6.1" style="left: 60%;"></a>
     
-        <a href="../Chapter06/Semaphore.html" title="信号量Semaphore" class="chapter  " data-progress="6.2" style="left: 62.22222222222222%;"></a>
+        <a href="../Chapter06/Semaphore.html" title="信号量Semaphore" class="chapter done " data-progress="6.2" style="left: 62.22222222222222%;"></a>
     
-        <a href="../Chapter07/README.html" title="ThreadLocal" class="chapter  new-chapter" data-progress="7" style="left: 64.44444444444444%;"></a>
+        <a href="../Chapter07/README.html" title="ThreadLocal" class="chapter done new-chapter" data-progress="7" style="left: 64.44444444444444%;"></a>
     
-        <a href="../Chapter07/jdk1.5ScourceCode.html" title="jdk1.5源码" class="chapter  " data-progress="7.1" style="left: 66.66666666666667%;"></a>
+        <a href="../Chapter07/jdk1.5ScourceCode.html" title="jdk1.5源码" class="chapter done " data-progress="7.1" style="left: 66.66666666666667%;"></a>
     
-        <a href="../Chapter07/Example.html" title="例子" class="chapter  " data-progress="7.2" style="left: 68.88888888888889%;"></a>
+        <a href="../Chapter07/Example.html" title="例子" class="chapter done " data-progress="7.2" style="left: 68.88888888888889%;"></a>
     
-        <a href="../Chapter08/README.html" title="并行程序设计模式" class="chapter  new-chapter" data-progress="8" style="left: 71.11111111111111%;"></a>
+        <a href="../Chapter08/README.html" title="并行程序设计模式" class="chapter done new-chapter" data-progress="8" style="left: 71.11111111111111%;"></a>
     
-        <a href="../Chapter08/Future.html" title="Future模式" class="chapter  " data-progress="8.1" style="left: 73.33333333333333%;"></a>
+        <a href="../Chapter08/Future.html" title="Future模式" class="chapter done " data-progress="8.1" style="left: 73.33333333333333%;"></a>
     
         <a href="../Chapter08/MasterWorker.html" title="Master-Worker模式" class="chapter  " data-progress="8.2" style="left: 75.55555555555556%;"></a>
     
@@ -656,11 +656,179 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_24">
+                    <section class="normal" id="section-gitbook_29">
                     
-                        <h1 id="-deque">并发Deque</h1>
-<p>在JDK6中，还提供了一种双端队列(Double-Ended Queue),简称Deque。Deque允许在队列的头部或尾部进行出队和入队操作。</p>
+                        <h1 id="future-">Future模式</h1>
+<p>某一段程序提交了一个请求，期望得到一个答复。在传统单线程环境下，必须等服务程序返回结果后，才能进行其它处理。而在Future模式中，调用方式改为异步，在主调用函数中，原来等待返回结果的时间段，可以处理其它事务。</p>
+<p>Future模式的主要参与者</p>
+<table>
+<thead>
+<tr>
+<th>参与者</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Main</td>
+<td>系统调用，调用Client发出请求</td>
+</tr>
+<tr>
+<td>Client</td>
+<td>返回Data对象，立即返回FutureData,并开启ClientThread线程装配RealData</td>
+</tr>
+<tr>
+<td>Data</td>
+<td>返回数据的接口</td>
+</tr>
+<tr>
+<td>FutureDate</td>
+<td>Future数据，构造很快，但是是一个虚拟的数据，需要装配RealData</td>
+</tr>
+<tr>
+<td>RealData</td>
+<td>真实数据，但是构造较慢</td>
+</tr>
+</tbody>
+</table>
+<h1 id="future-">Future模式代码实现</h1>
+<h3 id="-1-data-java">(1)    Data.java</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Data</span> {</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title">getResult</span>();
+}
+</code></pre>
+<h3 id="-2-realdata-java">(2)    RealData.java</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RealData</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Data</span> {</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">final</span> String result;
+    <span class="hljs-keyword">public</span> <span class="hljs-title">RealData</span>(String para) {
+        <span class="hljs-comment">//RealData的构造可能很慢，需要用户等待很久</span>
+        StringBuffer sb=<span class="hljs-keyword">new</span> StringBuffer();
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+            sb.append(para);
+            <span class="hljs-keyword">try</span> {
+                Thread.sleep(<span class="hljs-number">100</span>);
+            } <span class="hljs-keyword">catch</span> (InterruptedException e) {
+            }
+        }
+        result=sb.toString();
+    }
+    <span class="hljs-keyword">public</span> String <span class="hljs-title">getResult</span>() {
+        <span class="hljs-keyword">return</span> result;
+    }
+}
+</code></pre>
+<h3 id="-3-futuredata-java">(3)    FutureData.java</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FutureData</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Data</span> {</span>
+    <span class="hljs-keyword">protected</span> RealData realdata = <span class="hljs-keyword">null</span>;
+    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">boolean</span> isReady = <span class="hljs-keyword">false</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setRealData</span>(RealData realdata) {
+        <span class="hljs-keyword">if</span> (isReady) {                        
+            <span class="hljs-keyword">return</span>;     
+        }
+        <span class="hljs-keyword">this</span>.realdata = realdata;
+        isReady = <span class="hljs-keyword">true</span>;
+        notifyAll();
+    }
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> String <span class="hljs-title">getResult</span>() {
+        <span class="hljs-keyword">while</span> (!isReady) {
+            <span class="hljs-keyword">try</span> {
+                wait();
+            } <span class="hljs-keyword">catch</span> (InterruptedException e) {
+            }
+        }
+        <span class="hljs-keyword">return</span> realdata.result;
+    }
+}
+</code></pre>
+<h3 id="-4-client-java">(4)    Client.java</h3>
+<pre><code>public class Client {
+    public Data request(final String queryStr) {
+        final FutureData future = new FutureData();
+        // RealData的构建很慢
+        new Thread() {                                      
+            public void run() {                             
+                RealData realdata = new RealData(queryStr);
+                future.setRealData(realdata);
+            }                                               
+        }.start();
+        return future;
+    }
+}
+</code></pre><h3 id="-5-main-java">(5)    Main.java</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> {</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(String[] args) {
+        Client client = <span class="hljs-keyword">new</span> Client();
 
+        Data data = client.request(<span class="hljs-string">"a"</span>);
+        System.out.println(<span class="hljs-string">"请求完毕"</span>);
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-comment">//这里可以用一个sleep代替了对其它业务逻辑的处理</span>
+            Thread.sleep(<span class="hljs-number">2000</span>);
+        } <span class="hljs-keyword">catch</span> (InterruptedException e) {
+        }
+            <span class="hljs-comment">//使用真实的数据</span>
+        System.out.println(<span class="hljs-string">"数据 = "</span> + data.getResult());
+    }
+}
+</code></pre>
+<pre><code>输出结果：
+请求完毕
+数据 = aaaaaaaaaa
+</code></pre><h1 id="jdk-">JDK实现</h1>
+<p><img src="img/img01.png" alt="jdk future"></p>
+<h3 id="-1-realdata-java">(1)    RealData.java</h3>
+<pre><code class="lang-java">import java.util.concurrent.Callable;
+
+public class RealData implements Callable&lt;String&gt; {
+    private String para;
+    public RealData(String para){
+        this.para=para;
+    }
+    @Override
+    public String call() throws Exception {
+
+        StringBuffer sb=new StringBuffer();
+        for (int i = 0; i &lt; 10; i++) {
+            sb.append(para);
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+            }
+        }
+        return sb.toString();
+    }
+}
+</code></pre>
+<h3 id="-2-main-java">(2)    Main.java</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.concurrent.ExecutionException;
+<span class="hljs-keyword">import</span> java.util.concurrent.ExecutorService;
+<span class="hljs-keyword">import</span> java.util.concurrent.Executors;
+<span class="hljs-keyword">import</span> java.util.concurrent.FutureTask;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> {</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(String[] args) <span class="hljs-keyword">throws</span> InterruptedException, ExecutionException {
+        <span class="hljs-comment">//构造FutureTask</span>
+        FutureTask&lt;String&gt; future = <span class="hljs-keyword">new</span> FutureTask&lt;String&gt;(<span class="hljs-keyword">new</span> RealData(<span class="hljs-string">"a"</span>));
+        ExecutorService executor = Executors.newFixedThreadPool(<span class="hljs-number">1</span>);
+        <span class="hljs-comment">//执行FutureTask，相当于上例中的 client.request("a") 发送请求</span>
+        <span class="hljs-comment">//在这里开启线程进行RealData的call()执行</span>
+        executor.submit(future);
+        System.out.println(<span class="hljs-string">"请求完毕"</span>);
+        <span class="hljs-keyword">try</span> {
+        <span class="hljs-comment">//这里依然可以做额外的数据操作，这里使用sleep代替其他业务逻辑的处理</span>
+            Thread.sleep(<span class="hljs-number">2000</span>);
+        } <span class="hljs-keyword">catch</span> (InterruptedException e) {
+        }
+        <span class="hljs-comment">//相当于上例中得data.getContent()，取得call()方法的返回值</span>
+        <span class="hljs-comment">//如果此时call()方法没有执行完成，则依然会等待</span>
+        System.out.println(<span class="hljs-string">"数据 = "</span> + future.get());
+    }
+}
+</code></pre>
+<pre><code>输出结果：
+请求完毕
+数据 = aaaaaaaaaa
+</code></pre>
                     
                     </section>
                 
@@ -669,10 +837,10 @@
         </div>
 
         
-        <a href="../Chapter01/Queue.html" class="navigation navigation-prev "><i class="fa fa-angle-left"></i></a>
+        <a href="../Chapter08/README.html" class="navigation navigation-prev "><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../Chapter01/More.html" class="navigation navigation-next "><i class="fa fa-angle-right"></i></a>
+        <a href="../Chapter08/MasterWorker.html" class="navigation navigation-next "><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
