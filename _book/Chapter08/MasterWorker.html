@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
-<html lang="en-US" manifest="../manifest.appcache">
+<html lang="en-US" >
     
     <head>
         
         <meta charset="UTF-8">
-        <title>任务执行的三种模式 | Java并发编程学习笔记</title>
+        <title>Master-Worker模式 | Java并发编程学习笔记</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 0.5.3">
@@ -19,10 +19,10 @@
     <meta name="author" content="xionglie">
     
     
-    <link rel="next" href="../Chapter03/ThreadPoolExecutor.html" />
+    <link rel="next" href="../Chapter08/GuardedSuspension.html" />
     
     
-    <link rel="prev" href="../Chapter03/README.html" />
+    <link rel="prev" href="../Chapter08/Future.html" />
     
 
         
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="xionglie/notes-learning-java-concurrency" data-level="3.1" data-basepath=".." data-revision="1403621677874">
+    <div class="book" data-github="xionglie/notes-learning-java-concurrency" data-level="8.2" data-basepath=".." data-revision="1403621546631">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -118,7 +118,7 @@
         
         
         <li>
-            <a href="https://github.com/xionglie/notes-learning-java-concurrency/edit/master/Chapter03/TaskRun.md" target="blank" class="contribute-link">Edit and Contribute</a>
+            <a href="https://github.com/xionglie/notes-learning-java-concurrency/edit/master/Chapter08/MasterWorker.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
 
@@ -741,7 +741,7 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 24.444444444444443%;min-width: 22.22222222222222%;"></div>
+        <div class="inner" style="width: 68.88888888888889%;min-width: 66.66666666666667%;"></div>
     </div>
     <div class="chapters">
     
@@ -769,45 +769,45 @@
     
         <a href="../Chapter03/TaskRun.html" title="任务执行的三种模式" class="chapter done " data-progress="3.1" style="left: 24.444444444444443%;"></a>
     
-        <a href="../Chapter03/ThreadPoolExecutor.html" title="ThreadPoolExecutor" class="chapter  " data-progress="3.2" style="left: 26.666666666666668%;"></a>
+        <a href="../Chapter03/ThreadPoolExecutor.html" title="ThreadPoolExecutor" class="chapter done " data-progress="3.2" style="left: 26.666666666666668%;"></a>
     
-        <a href="../Chapter03/CreateThreadPool.html" title="Executors创建线程池" class="chapter  " data-progress="3.3" style="left: 28.88888888888889%;"></a>
+        <a href="../Chapter03/CreateThreadPool.html" title="Executors创建线程池" class="chapter done " data-progress="3.3" style="left: 28.88888888888889%;"></a>
     
-        <a href="../Chapter03/Example.html" title="线程池创建示例" class="chapter  " data-progress="3.4" style="left: 31.11111111111111%;"></a>
+        <a href="../Chapter03/Example.html" title="线程池创建示例" class="chapter done " data-progress="3.4" style="left: 31.11111111111111%;"></a>
     
-        <a href="../Chapter04/README.html" title="任务异步返回结果和取消关闭" class="chapter  new-chapter" data-progress="4" style="left: 33.333333333333336%;"></a>
+        <a href="../Chapter04/README.html" title="任务异步返回结果和取消关闭" class="chapter done new-chapter" data-progress="4" style="left: 33.333333333333336%;"></a>
     
-        <a href="../Chapter04/CallableFuture.html" title="Callable与Future" class="chapter  " data-progress="4.1" style="left: 35.55555555555556%;"></a>
+        <a href="../Chapter04/CallableFuture.html" title="Callable与Future" class="chapter done " data-progress="4.1" style="left: 35.55555555555556%;"></a>
     
-        <a href="../Chapter04/TaskCancle.html" title="任务取消" class="chapter  " data-progress="4.2" style="left: 37.77777777777778%;"></a>
+        <a href="../Chapter04/TaskCancle.html" title="任务取消" class="chapter done " data-progress="4.2" style="left: 37.77777777777778%;"></a>
     
-        <a href="../Chapter05/README.html" title="显式锁" class="chapter  new-chapter" data-progress="5" style="left: 40%;"></a>
+        <a href="../Chapter05/README.html" title="显式锁" class="chapter done new-chapter" data-progress="5" style="left: 40%;"></a>
     
-        <a href="../Chapter05/Lock-ReentrantLock.html" title="Lock与ReentrantLock" class="chapter  " data-progress="5.1" style="left: 42.22222222222222%;"></a>
+        <a href="../Chapter05/Lock-ReentrantLock.html" title="Lock与ReentrantLock" class="chapter done " data-progress="5.1" style="left: 42.22222222222222%;"></a>
     
-        <a href="../Chapter05/tryLock.html" title="轮询锁和定时锁" class="chapter  " data-progress="5.2" style="left: 44.44444444444444%;"></a>
+        <a href="../Chapter05/tryLock.html" title="轮询锁和定时锁" class="chapter done " data-progress="5.2" style="left: 44.44444444444444%;"></a>
     
-        <a href="../Chapter05/lockInterruptibly.html" title="可中断的锁" class="chapter  " data-progress="5.3" style="left: 46.666666666666664%;"></a>
+        <a href="../Chapter05/lockInterruptibly.html" title="可中断的锁" class="chapter done " data-progress="5.3" style="left: 46.666666666666664%;"></a>
     
-        <a href="../Chapter05/ReadWriteLock.html" title="读-写锁" class="chapter  " data-progress="5.4" style="left: 48.888888888888886%;"></a>
+        <a href="../Chapter05/ReadWriteLock.html" title="读-写锁" class="chapter done " data-progress="5.4" style="left: 48.888888888888886%;"></a>
     
-        <a href="../Chapter06/README.html" title="同步" class="chapter  new-chapter" data-progress="6" style="left: 51.111111111111114%;"></a>
+        <a href="../Chapter06/README.html" title="同步" class="chapter done new-chapter" data-progress="6" style="left: 51.111111111111114%;"></a>
     
-        <a href="../Chapter06/CyclicBarrier-CountDownLatch.html" title="栅栏CyclicBarrier与计数器CountDownLatch" class="chapter  " data-progress="6.1" style="left: 53.333333333333336%;"></a>
+        <a href="../Chapter06/CyclicBarrier-CountDownLatch.html" title="栅栏CyclicBarrier与计数器CountDownLatch" class="chapter done " data-progress="6.1" style="left: 53.333333333333336%;"></a>
     
-        <a href="../Chapter06/Semaphore.html" title="信号量Semaphore" class="chapter  " data-progress="6.2" style="left: 55.55555555555556%;"></a>
+        <a href="../Chapter06/Semaphore.html" title="信号量Semaphore" class="chapter done " data-progress="6.2" style="left: 55.55555555555556%;"></a>
     
-        <a href="../Chapter07/README.html" title="ThreadLocal" class="chapter  new-chapter" data-progress="7" style="left: 57.77777777777778%;"></a>
+        <a href="../Chapter07/README.html" title="ThreadLocal" class="chapter done new-chapter" data-progress="7" style="left: 57.77777777777778%;"></a>
     
-        <a href="../Chapter07/jdk1.5ScourceCode.html" title="jdk1.5源码" class="chapter  " data-progress="7.1" style="left: 60%;"></a>
+        <a href="../Chapter07/jdk1.5ScourceCode.html" title="jdk1.5源码" class="chapter done " data-progress="7.1" style="left: 60%;"></a>
     
-        <a href="../Chapter07/Example.html" title="例子" class="chapter  " data-progress="7.2" style="left: 62.22222222222222%;"></a>
+        <a href="../Chapter07/Example.html" title="例子" class="chapter done " data-progress="7.2" style="left: 62.22222222222222%;"></a>
     
-        <a href="../Chapter08/README.html" title="并行程序设计模式" class="chapter  new-chapter" data-progress="8" style="left: 64.44444444444444%;"></a>
+        <a href="../Chapter08/README.html" title="并行程序设计模式" class="chapter done new-chapter" data-progress="8" style="left: 64.44444444444444%;"></a>
     
-        <a href="../Chapter08/Future.html" title="Future模式" class="chapter  " data-progress="8.1" style="left: 66.66666666666667%;"></a>
+        <a href="../Chapter08/Future.html" title="Future模式" class="chapter done " data-progress="8.1" style="left: 66.66666666666667%;"></a>
     
-        <a href="../Chapter08/MasterWorker.html" title="Master-Worker模式" class="chapter  " data-progress="8.2" style="left: 68.88888888888889%;"></a>
+        <a href="../Chapter08/MasterWorker.html" title="Master-Worker模式" class="chapter done " data-progress="8.2" style="left: 68.88888888888889%;"></a>
     
         <a href="../Chapter08/GuardedSuspension.html" title="Guarded-Suspension模式" class="chapter  " data-progress="8.3" style="left: 71.11111111111111%;"></a>
     
@@ -842,68 +842,165 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_13">
+                    <section class="normal" id="section-gitbook_93">
                     
-                        <h1 id="-">任务执行的三种模式</h1>
-<h1 id="-1-">(1)串行的执行任务</h1>
-<pre><code class="lang-java"><span class="hljs-comment">//串行的web服务器</span>
-class SingleThreadWebServer {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(String[] args) <span class="hljs-keyword">throws</span> IOException {
-        ServerSocket socket = <span class="hljs-keyword">new</span> ServerSocket(<span class="hljs-number">80</span>);
-        <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) {
-            Socket connection = socket.accept();
-            handleRequest(connection);
-        }
-    }
-}
-</code></pre>
-<p>SingleThreadWebServer很简单，且在理论上是正确的，但在实际生产环境中的执行性能却很糟糕，因为它每次只能处理一次请求。在服务器应用程序中，串行处理机制都无法提供高吞吐率或快速响应性。</p>
-<h1 id="-2-">(2)显式的为任务创建线程</h1>
-<pre><code class="lang-java"><span class="hljs-comment">//在web服务器中为每个请求启动一个新的线程(不要这么做)</span>
-class ThreadPerTaskWebServer {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(String[] args) <span class="hljs-keyword">throws</span> IOException {
-        ServerSocket socket = <span class="hljs-keyword">new</span> ServerSocket(<span class="hljs-number">80</span>);
-        <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) {
-            <span class="hljs-keyword">final</span> Socket connection = socket.accept();
-            Runnable task = <span class="hljs-keyword">new</span> Runnable() {
-                <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span>() {
-                    handleRequest(connection);
-                }
-            };
-            <span class="hljs-keyword">new</span> Thread(task).start();
-        }
-    }
-}
-</code></pre>
-<p>在正常的情况下，”为每个任务分配一个线程”的方法能提升串行执行任务的性能。只要请求的到达速率不超过服务器的请求处理能力，那么这种方法可以同时带来更快的响应性和更高的吞吐率。</p>
-<p>但这种方法存在一些缺陷，尤其当需要创建大量线程的时候。</p>
-<ul>
-<li>线程生命周期的开销非常高。</li>
-<li>资源消耗。活跃的线程会消耗系统资源，尤其是内存。如果可运行的线程数多于可用处理器的数量，那么有些线程将闲置。大量空闲的线程会占用许多内存，给垃圾回收器带来压力，而且大量线程在竞争CPU资源时还将产生其他的性能开销。</li>
-<li>稳定性。在可创建线程的数量上存在一个限制。如果超过了这些限制，很可能会抛出outOfMemoryError异常，要想从这种错误中恢复过来是非常危险的，更简单的方法是通过构造程序来避免超出这些限制。</li>
-</ul>
-<h1 id="-3-">(3).基于线程池的实现</h1>
-<pre><code class="lang-java"><span class="hljs-comment">// 基于线程池的web服务器</span>
-class TaskExecutionWebServer {
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> NTHREADS = <span class="hljs-number">100</span>;
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Executor exec = Executors.newFixedThreadPool(NTHREADS);
+                        <h1 id="master-worker-">Master-Worker模式</h1>
+<p>Master-Worker模式是常用的并行模式。它的核心思想是，系统由两类进程协作工作：Master进程，Worker进程。Master进程负责接收和分配任务，worker进程负责处理子任务。当各个Worker进程将子任务处理完成后，将结果返回给Master进程，由Master进程做归纳和汇总，从而得到系统的最终结果。</p>
+<p><img src="img/img02.png" alt=""></p>
+<h1 id="-">代码实现</h1>
+<p>应用Master-Worker框架，实现计算立方和的应用，并计算1~100的立方和。</p>
+<p>计算任务被分解为100个任务，每个任务仅用于计算单独的立方和。Master产生固定个数的worker来处理所有这些子任务。Worker不断地从任务集体集合中取得这些计算立方和的子任务，并将计算结果返回给Master.Master负责将所有worker累加，从而产生最终的结果。在计算过程中，Master和Worker的运行也是完全异步的,Master不必等所有的Worker都执行完成后，就可以进行求和操作。Master在获得部分子任务结果集时，就可以开始对最终结果进行计算，从而进一步提高系统的并行度和吞吐量。</p>
+<h3 id="-1-master-java">(1)    Master.java</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.HashMap;
+<span class="hljs-keyword">import</span> java.util.Map;
+<span class="hljs-keyword">import</span> java.util.Queue;
+<span class="hljs-keyword">import</span> java.util.concurrent.ConcurrentHashMap;
+<span class="hljs-keyword">import</span> java.util.concurrent.ConcurrentLinkedQueue;
 
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(String[] args) <span class="hljs-keyword">throws</span> IOException {
-        ServerSocket socket = <span class="hljs-keyword">new</span> ServerSocket(<span class="hljs-number">80</span>);
-        <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) {
-            <span class="hljs-keyword">final</span> Socket connection = socket.accept();
-            Runnable task = <span class="hljs-keyword">new</span> Runnable() {
-                <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span>() {
-                    handleRequest(connection);
-                }
-            };
-            exec.execute(task);
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Master</span> {</span>
+    <span class="hljs-comment">// 任务队列</span>
+    <span class="hljs-keyword">protected</span> Queue&lt;Object&gt; workQueue = <span class="hljs-keyword">new</span> ConcurrentLinkedQueue&lt;Object&gt;();
+    <span class="hljs-comment">// Worker线程队列</span>
+    <span class="hljs-keyword">protected</span> Map&lt;String, Thread&gt; threadMap = <span class="hljs-keyword">new</span> HashMap&lt;String, Thread&gt;();
+    <span class="hljs-comment">// 子任务处理结果集</span>
+    <span class="hljs-keyword">protected</span> Map&lt;String, Object&gt; resultMap = <span class="hljs-keyword">new</span> ConcurrentHashMap&lt;String, Object&gt;();
+
+    <span class="hljs-comment">// 是否所有的子任务都结束了</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isComplete</span>() {
+        <span class="hljs-keyword">for</span> (Map.Entry&lt;String, Thread&gt; entry : threadMap.entrySet()) {
+            <span class="hljs-keyword">if</span> (entry.getValue().getState() != Thread.State.TERMINATED) {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+            }
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+    }
+
+    <span class="hljs-comment">// Master的构造，需要一个Worker进程逻辑，和需要的Worker进程数量</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-title">Master</span>(Worker worker, <span class="hljs-keyword">int</span> countWorker) {
+        worker.setWorkQueue(workQueue);
+        worker.setResultMap(resultMap);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; countWorker; i++)
+            threadMap.put(Integer.toString(i),
+                    <span class="hljs-keyword">new</span> Thread(worker, Integer.toString(i)));
+    }
+
+    <span class="hljs-comment">// 提交一个任务</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">submit</span>(Object job) {
+        workQueue.add(job);
+    }
+
+    <span class="hljs-comment">// 返回子任务结果集</span>
+    <span class="hljs-keyword">public</span> Map&lt;String, Object&gt; <span class="hljs-title">getResultMap</span>() {
+        <span class="hljs-keyword">return</span> resultMap;
+    }
+
+    <span class="hljs-comment">// 开始运行所有的Worker进程，进行处理</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">execute</span>() {
+        <span class="hljs-keyword">for</span> (Map.Entry&lt;String, Thread&gt; entry : threadMap.entrySet()) {
+            entry.getValue().start();
         }
     }
 }
 </code></pre>
-<p>在TaskExecutionWebServer中，通过使用Executor，将请求处理任务的提交与任务的实际执行解耦开来，并且只需采用另一种不同的Executor实现，就可以改变服务器的行为。</p>
+<h3 id="-2-worker-java">(2)    Worker.java</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.Map;
+<span class="hljs-keyword">import</span> java.util.Queue;
 
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Worker</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Runnable</span> {</span>
+    <span class="hljs-comment">// 任务队列，用于取得子任务</span>
+    <span class="hljs-keyword">protected</span> Queue&lt;Object&gt; workQueue;
+    <span class="hljs-comment">// 子任务处理结果集</span>
+    <span class="hljs-keyword">protected</span> Map&lt;String, Object&gt; resultMap;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setWorkQueue</span>(Queue&lt;Object&gt; workQueue) {
+        <span class="hljs-keyword">this</span>.workQueue = workQueue;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setResultMap</span>(Map&lt;String, Object&gt; resultMap) {
+        <span class="hljs-keyword">this</span>.resultMap = resultMap;
+    }
+
+    <span class="hljs-comment">// 子任务处理的逻辑，在子类中实现具体逻辑</span>
+    <span class="hljs-keyword">public</span> Object <span class="hljs-title">handle</span>(Object input) {
+        <span class="hljs-keyword">return</span> input;
+    }
+
+    <span class="hljs-annotation">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span>() {
+        <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) {
+            <span class="hljs-comment">// 获取子任务</span>
+            Object input = workQueue.poll();
+            <span class="hljs-keyword">if</span> (input == <span class="hljs-keyword">null</span>)
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-comment">// 处理子任务</span>
+            Object re = handle(input);
+            <span class="hljs-comment">// 将处理结果写入结果集</span>
+            resultMap.put(Integer.toString(input.hashCode()), re);
+        }
+    }
+}
+</code></pre>
+<h3 id="-3-testmasterworker-java">(3)    TestMasterWorker.java</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.Map;
+<span class="hljs-keyword">import</span> java.util.Set;
+
+<span class="hljs-keyword">import</span> org.junit.Test;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestMasterWorker</span> {</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PlusWorker</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Worker</span> {</span>
+        <span class="hljs-keyword">public</span> Object <span class="hljs-title">handle</span>(Object input) {
+            Integer i = (Integer) input;
+            <span class="hljs-keyword">return</span> i * i * i;
+        }
+    }
+
+    <span class="hljs-annotation">@Test</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testMasterWorker</span>() {
+        Master m = <span class="hljs-keyword">new</span> Master(<span class="hljs-keyword">new</span> PlusWorker(), <span class="hljs-number">5</span>);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100</span>; i++) {
+            m.submit(i);
+        }
+        m.execute();
+        <span class="hljs-keyword">int</span> re = <span class="hljs-number">0</span>;
+        Map&lt;String, Object&gt; resultMap = m.getResultMap();
+        <span class="hljs-keyword">while</span> (resultMap.size() &gt; <span class="hljs-number">0</span> || !m.isComplete()) {
+            Set&lt;String&gt; keys = resultMap.keySet();
+            String key = <span class="hljs-keyword">null</span>;
+            <span class="hljs-keyword">for</span> (String k : keys) {
+                key = k;
+                <span class="hljs-keyword">break</span>;
+            }
+            Integer i = <span class="hljs-keyword">null</span>;
+            <span class="hljs-keyword">if</span> (key != <span class="hljs-keyword">null</span>) {
+                i = (Integer) resultMap.get(key);
+            }
+            <span class="hljs-keyword">if</span> (i != <span class="hljs-keyword">null</span>) {
+                re += i;
+            }
+            <span class="hljs-keyword">if</span> (key != <span class="hljs-keyword">null</span>) {
+                resultMap.remove(key);
+            }
+        }
+
+        System.out.println(<span class="hljs-string">"testMasterWorker:"</span> + re);
+    }
+
+    <span class="hljs-annotation">@Test</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testPlus</span>() {
+        <span class="hljs-keyword">int</span> re = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100</span>; i++) {
+            re += i * i * i;
+        }
+        System.out.println(<span class="hljs-string">"testPlus:"</span> + re);
+    }
+
+}
+</code></pre>
+<pre><code>执行输出结果：
+testMasterWorker:24502500
+testPlus:24502500
+</code></pre>
                     
                     </section>
                 
@@ -912,10 +1009,10 @@ class TaskExecutionWebServer {
         </div>
 
         
-        <a href="../Chapter03/README.html" class="navigation navigation-prev " aria-label="Previous page: 线程池Executor，ThreadPoolExecutor，Executors"><i class="fa fa-angle-left"></i></a>
+        <a href="../Chapter08/Future.html" class="navigation navigation-prev " aria-label="Previous page: Future模式"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../Chapter03/ThreadPoolExecutor.html" class="navigation navigation-next " aria-label="Next page: ThreadPoolExecutor"><i class="fa fa-angle-right"></i></a>
+        <a href="../Chapter08/GuardedSuspension.html" class="navigation navigation-next " aria-label="Next page: Guarded-Suspension模式"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
@@ -930,6 +1027,10 @@ class TaskExecutionWebServer {
 
     
     <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
     
 
 <script>
