@@ -5,6 +5,7 @@
     * [集合与线程安全](Chapter01/ThreadSafe.md)
     * [队列：Queue, BlockingQueue](Chapter01/Queue.md)
     * [并发Deque](Chapter01/Deque.md)
+    * [DelayQueue](Chapter01/DelayQueue.md)
     * [更多阅读](Chapter01/More.md)
 * [原子操作类Atomic](Chapter02/README.md)
     * [典型应用:按顺序获取ID](Chapter02/HowToUse.md)
