@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>信号量Semaphore | Java并发编程学习笔记</title>
+        <title>DelayQueue | Java并发编程学习笔记</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 0.5.3">
@@ -19,10 +19,10 @@
     <meta name="author" content="xionglie">
     
     
-    <link rel="next" href="../Chapter07/README.html" />
+    <link rel="next" href="../Chapter01/More.html" />
     
     
-    <link rel="prev" href="../Chapter06/CyclicBarrier-CountDownLatch.html" />
+    <link rel="prev" href="../Chapter01/Deque.html" />
     
 
         
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="xionglie/notes-learning-java-concurrency" data-level="6.2" data-basepath=".." data-revision="1403622298807">
+    <div class="book" data-github="xionglie/notes-learning-java-concurrency" data-level="1.5" data-basepath=".." data-revision="1403622298807">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -118,7 +118,7 @@
         
         
         <li>
-            <a href="https://github.com/xionglie/notes-learning-java-concurrency/edit/master/Chapter06/Semaphore.md" target="blank" class="contribute-link">Edit and Contribute</a>
+            <a href="https://github.com/xionglie/notes-learning-java-concurrency/edit/master/Chapter01/DelayQueue.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
 
@@ -753,7 +753,7 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 56.52173913043478%;min-width: 54.34782608695652%;"></div>
+        <div class="inner" style="width: 13.043478260869565%;min-width: 10.869565217391305%;"></div>
     </div>
     <div class="chapters">
     
@@ -771,45 +771,45 @@
     
         <a href="../Chapter01/DelayQueue.html" title="DelayQueue" class="chapter done " data-progress="1.5" style="left: 13.043478260869565%;"></a>
     
-        <a href="../Chapter01/More.html" title="更多阅读" class="chapter done " data-progress="1.6" style="left: 15.217391304347826%;"></a>
+        <a href="../Chapter01/More.html" title="更多阅读" class="chapter  " data-progress="1.6" style="left: 15.217391304347826%;"></a>
     
-        <a href="../Chapter02/README.html" title="原子操作类Atomic" class="chapter done new-chapter" data-progress="2" style="left: 17.391304347826086%;"></a>
+        <a href="../Chapter02/README.html" title="原子操作类Atomic" class="chapter  new-chapter" data-progress="2" style="left: 17.391304347826086%;"></a>
     
-        <a href="../Chapter02/HowToUse.html" title="典型应用:按顺序获取ID" class="chapter done " data-progress="2.1" style="left: 19.565217391304348%;"></a>
+        <a href="../Chapter02/HowToUse.html" title="典型应用:按顺序获取ID" class="chapter  " data-progress="2.1" style="left: 19.565217391304348%;"></a>
     
-        <a href="../Chapter02/Example.html" title="示例" class="chapter done " data-progress="2.2" style="left: 21.73913043478261%;"></a>
+        <a href="../Chapter02/Example.html" title="示例" class="chapter  " data-progress="2.2" style="left: 21.73913043478261%;"></a>
     
-        <a href="../Chapter03/README.html" title="线程池Executor，ThreadPoolExecutor，Executors" class="chapter done new-chapter" data-progress="3" style="left: 23.91304347826087%;"></a>
+        <a href="../Chapter03/README.html" title="线程池Executor，ThreadPoolExecutor，Executors" class="chapter  new-chapter" data-progress="3" style="left: 23.91304347826087%;"></a>
     
-        <a href="../Chapter03/TaskRun.html" title="任务执行的三种模式" class="chapter done " data-progress="3.1" style="left: 26.08695652173913%;"></a>
+        <a href="../Chapter03/TaskRun.html" title="任务执行的三种模式" class="chapter  " data-progress="3.1" style="left: 26.08695652173913%;"></a>
     
-        <a href="../Chapter03/ThreadPoolExecutor.html" title="ThreadPoolExecutor" class="chapter done " data-progress="3.2" style="left: 28.26086956521739%;"></a>
+        <a href="../Chapter03/ThreadPoolExecutor.html" title="ThreadPoolExecutor" class="chapter  " data-progress="3.2" style="left: 28.26086956521739%;"></a>
     
-        <a href="../Chapter03/CreateThreadPool.html" title="Executors创建线程池" class="chapter done " data-progress="3.3" style="left: 30.434782608695652%;"></a>
+        <a href="../Chapter03/CreateThreadPool.html" title="Executors创建线程池" class="chapter  " data-progress="3.3" style="left: 30.434782608695652%;"></a>
     
-        <a href="../Chapter03/Example.html" title="线程池创建示例" class="chapter done " data-progress="3.4" style="left: 32.608695652173914%;"></a>
+        <a href="../Chapter03/Example.html" title="线程池创建示例" class="chapter  " data-progress="3.4" style="left: 32.608695652173914%;"></a>
     
-        <a href="../Chapter04/README.html" title="任务异步返回结果和取消关闭" class="chapter done new-chapter" data-progress="4" style="left: 34.78260869565217%;"></a>
+        <a href="../Chapter04/README.html" title="任务异步返回结果和取消关闭" class="chapter  new-chapter" data-progress="4" style="left: 34.78260869565217%;"></a>
     
-        <a href="../Chapter04/CallableFuture.html" title="Callable与Future" class="chapter done " data-progress="4.1" style="left: 36.95652173913044%;"></a>
+        <a href="../Chapter04/CallableFuture.html" title="Callable与Future" class="chapter  " data-progress="4.1" style="left: 36.95652173913044%;"></a>
     
-        <a href="../Chapter04/TaskCancle.html" title="任务取消" class="chapter done " data-progress="4.2" style="left: 39.130434782608695%;"></a>
+        <a href="../Chapter04/TaskCancle.html" title="任务取消" class="chapter  " data-progress="4.2" style="left: 39.130434782608695%;"></a>
     
-        <a href="../Chapter05/README.html" title="显式锁" class="chapter done new-chapter" data-progress="5" style="left: 41.30434782608695%;"></a>
+        <a href="../Chapter05/README.html" title="显式锁" class="chapter  new-chapter" data-progress="5" style="left: 41.30434782608695%;"></a>
     
-        <a href="../Chapter05/Lock-ReentrantLock.html" title="Lock与ReentrantLock" class="chapter done " data-progress="5.1" style="left: 43.47826086956522%;"></a>
+        <a href="../Chapter05/Lock-ReentrantLock.html" title="Lock与ReentrantLock" class="chapter  " data-progress="5.1" style="left: 43.47826086956522%;"></a>
     
-        <a href="../Chapter05/tryLock.html" title="轮询锁和定时锁" class="chapter done " data-progress="5.2" style="left: 45.65217391304348%;"></a>
+        <a href="../Chapter05/tryLock.html" title="轮询锁和定时锁" class="chapter  " data-progress="5.2" style="left: 45.65217391304348%;"></a>
     
-        <a href="../Chapter05/lockInterruptibly.html" title="可中断的锁" class="chapter done " data-progress="5.3" style="left: 47.82608695652174%;"></a>
+        <a href="../Chapter05/lockInterruptibly.html" title="可中断的锁" class="chapter  " data-progress="5.3" style="left: 47.82608695652174%;"></a>
     
-        <a href="../Chapter05/ReadWriteLock.html" title="读-写锁" class="chapter done " data-progress="5.4" style="left: 50%;"></a>
+        <a href="../Chapter05/ReadWriteLock.html" title="读-写锁" class="chapter  " data-progress="5.4" style="left: 50%;"></a>
     
-        <a href="../Chapter06/README.html" title="同步" class="chapter done new-chapter" data-progress="6" style="left: 52.17391304347826%;"></a>
+        <a href="../Chapter06/README.html" title="同步" class="chapter  new-chapter" data-progress="6" style="left: 52.17391304347826%;"></a>
     
-        <a href="../Chapter06/CyclicBarrier-CountDownLatch.html" title="栅栏CyclicBarrier与计数器CountDownLatch" class="chapter done " data-progress="6.1" style="left: 54.34782608695652%;"></a>
+        <a href="../Chapter06/CyclicBarrier-CountDownLatch.html" title="栅栏CyclicBarrier与计数器CountDownLatch" class="chapter  " data-progress="6.1" style="left: 54.34782608695652%;"></a>
     
-        <a href="../Chapter06/Semaphore.html" title="信号量Semaphore" class="chapter done " data-progress="6.2" style="left: 56.52173913043478%;"></a>
+        <a href="../Chapter06/Semaphore.html" title="信号量Semaphore" class="chapter  " data-progress="6.2" style="left: 56.52173913043478%;"></a>
     
         <a href="../Chapter07/README.html" title="ThreadLocal" class="chapter  new-chapter" data-progress="7" style="left: 58.69565217391305%;"></a>
     
@@ -856,92 +856,242 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_25">
+                    <section class="normal" id="section-gitbook_30">
                     
-                        <h1 id="-semaphore">信号量Semaphore</h1>
-<p>计数信号量（Counting Semaphore）用来控制同时访问某个特定资源的操作数量，或者同时执行某个指定操作的数量。计数信号量还可以用来实现某种资源池，或者对容器施加边界。</p>
-<p>Semaphore中管理着一组虚拟的许可（permit），许可的初始数量可通过构造函数来指定。在执行操作时可以首先获得许可（只要还有剩余的许可），并在使用以后释放许可。如果没有许可，那么acquire将阻塞直到许可（或者被中断或者超时）。release方法将返回一个许可信号量。</p>
-<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.concurrent.ExecutorService;
-<span class="hljs-keyword">import</span> java.util.concurrent.Executors;
-<span class="hljs-keyword">import</span> java.util.concurrent.Semaphore;
-
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SemaphoreTest</span> {</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(String[] args) {
-        MyPool myPool = <span class="hljs-keyword">new</span> MyPool(<span class="hljs-number">20</span>);
-        <span class="hljs-comment">// 创建线程池</span>
-        ExecutorService threadPool = Executors.newFixedThreadPool(<span class="hljs-number">2</span>);
-        MyThread t1 = <span class="hljs-keyword">new</span> MyThread(<span class="hljs-string">"任务A"</span>, myPool, <span class="hljs-number">3</span>);
-        MyThread t2 = <span class="hljs-keyword">new</span> MyThread(<span class="hljs-string">"任务B"</span>, myPool, <span class="hljs-number">12</span>);
-        MyThread t3 = <span class="hljs-keyword">new</span> MyThread(<span class="hljs-string">"任务C"</span>, myPool, <span class="hljs-number">7</span>);
-        <span class="hljs-comment">// 在线程池中执行任务</span>
-        threadPool.execute(t1);
-        threadPool.execute(t2);
-        threadPool.execute(t3);
-        <span class="hljs-comment">// 关闭池</span>
-        threadPool.shutdown();
-    }
+                        <h1 id="-delayqueue">精巧好用的DelayQueue</h1>
+<p>原文：<a href="http://www.cnblogs.com/jobs/archive/2007/04/27/730255.html" target="_blank">http://www.cnblogs.com/jobs/archive/2007/04/27/730255.html</a></p>
+<p>我们谈一下实际的场景吧。我们在开发中，有如下场景</p>
+<p>a) 关闭空闲连接。服务器中，有很多客户端的连接，空闲一段时间之后需要关闭之。
+b) 缓存。缓存中的对象，超过了空闲时间，需要从缓存中移出。
+c) 任务超时处理。在网络协议滑动窗口请求应答式交互时，处理超时未响应的请求。</p>
+<p>一种笨笨的办法就是，使用一个后台线程，遍历所有对象，挨个检查。这种笨笨的办法简单好用，但是对象数量过多时，可能存在性能问题，检查间隔时间不好设置，间隔时间过大，影响精确度，多小则存在效率问题。而且做不到按超时的时间顺序处理。 </p>
+<p>这场景，使用DelayQueue最适合了。</p>
+<p>DelayQueue是一个BlockingQueue，其特化的参数是Delayed。（不了解BlockingQueue的同学，先去了解BlockingQueue再看本文）
+Delayed扩展了Comparable接口，比较的基准为延时的时间值，Delayed接口的实现类getDelay的返回值应为固定值（final）。DelayQueue内部是使用PriorityQueue实现的。</p>
+<p>DelayQueue = BlockingQueue + PriorityQueue + Delayed</p>
+<p>DelayQueue的关键元素BlockingQueue、PriorityQueue、Delayed。可以这么说，DelayQueue是一个使用优先队列（PriorityQueue）实现的BlockingQueue，优先队列的比较基准值是时间。</p>
+<p>他们的基本定义如下</p>
+<pre><code class="lang-java">public interface Comparable&lt;T&gt; {
+    public int compareTo(T o);
 }
 
-<span class="hljs-javadoc">/**
- * 一个池
- */</span>
-class MyPool {
-    <span class="hljs-keyword">private</span> Semaphore sp; <span class="hljs-comment">// 池相关的信号量</span>
-
-    <span class="hljs-javadoc">/**
-     * 池的大小，这个大小会传递给信号量
-     * 
-     *<span class="hljs-javadoctag"> @param</span> size
-     *            池的大小
-     */</span>
-    MyPool(<span class="hljs-keyword">int</span> size) {
-        <span class="hljs-keyword">this</span>.sp = <span class="hljs-keyword">new</span> Semaphore(size);
-    }
-
-    <span class="hljs-keyword">public</span> Semaphore <span class="hljs-title">getSp</span>() {
-        <span class="hljs-keyword">return</span> sp;
-    }
-
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setSp</span>(Semaphore sp) {
-        <span class="hljs-keyword">this</span>.sp = sp;
-    }
+public interface Delayed extends Comparable&lt;Delayed&gt; {
+    long getDelay(TimeUnit unit);
 }
 
-class MyThread extends Thread {
-    <span class="hljs-keyword">private</span> String threadname; <span class="hljs-comment">// 线程的名称</span>
-    <span class="hljs-keyword">private</span> MyPool pool; <span class="hljs-comment">// 自定义池</span>
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> x; <span class="hljs-comment">// 申请信号量的大小</span>
+public class DelayQueue&lt;E extends Delayed&gt; implements BlockingQueue&lt;E&gt; { 
+    private final PriorityQueue&lt;E&gt; q = new PriorityQueue&lt;E&gt;();
+}
+</code></pre>
+<p>DelayQueue内部的实现使用了一个优先队列。当调用DelayQueue的offer方法时，把Delayed对象加入到优先队列q中。如下：</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">offer</span>(E e) {
+    <span class="hljs-keyword">final</span> ReentrantLock lock = <span class="hljs-keyword">this</span>.lock;
+    lock.lock();
+    <span class="hljs-keyword">try</span> {
+        E first = q.peek();
+        q.offer(e);
+        <span class="hljs-keyword">if</span> (first == <span class="hljs-keyword">null</span> || e.compareTo(first) &lt; <span class="hljs-number">0</span>)
+            available.signalAll();
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+    } <span class="hljs-keyword">finally</span> {
+        lock.unlock();
+    }
+}
+</code></pre>
+<p>DelayQueue的take方法，把优先队列q的first拿出来（peek），如果没有达到延时阀值，则进行await处理。如下：</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> E <span class="hljs-title">take</span>() <span class="hljs-keyword">throws</span> InterruptedException {
+    <span class="hljs-keyword">final</span> ReentrantLock lock = <span class="hljs-keyword">this</span>.lock;
+    lock.lockInterruptibly();
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">for</span> (;;) {
+            E first = q.peek();
+            <span class="hljs-keyword">if</span> (first == <span class="hljs-keyword">null</span>) {
+                available.await();
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">long</span> delay =  first.getDelay(TimeUnit.NANOSECONDS);
+                <span class="hljs-keyword">if</span> (delay &gt; <span class="hljs-number">0</span>) {
+                    <span class="hljs-keyword">long</span> tl = available.awaitNanos(delay);
+                } <span class="hljs-keyword">else</span> {
+                    E x = q.poll();
+                    <span class="hljs-keyword">assert</span> x != <span class="hljs-keyword">null</span>;
+                    <span class="hljs-keyword">if</span> (q.size() != <span class="hljs-number">0</span>)
+                        available.signalAll(); <span class="hljs-comment">// wake up other takers</span>
+                    <span class="hljs-keyword">return</span> x;
 
-    MyThread(String threadname, MyPool pool, <span class="hljs-keyword">int</span> x) {
-        <span class="hljs-keyword">this</span>.threadname = threadname;
-        <span class="hljs-keyword">this</span>.pool = pool;
-        <span class="hljs-keyword">this</span>.x = x;
+                }
+            }
+        }
+    } <span class="hljs-keyword">finally</span> {
+        lock.unlock();
+    }
+}
+</code></pre>
+<p>以下是Sample，是一个缓存的简单实现。共包括三个类Pair、DelayItem、Cache。如下：</p>
+<p>public class Pair<K, V> {
+    public K first;</p>
+<pre><code>public V second;
+
+public Pair() {}
+
+public Pair(K first, V second) {
+    this.first = first;
+    this.second = second;
+}
+</code></pre><p>}</p>
+<p>以下是Delayed的实现</p>
+<pre><code class="lang-java">import java.util.concurrent.Delayed;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicLong;
+
+public class DelayItem&lt;T&gt; implements Delayed {
+    /** Base of nanosecond timings, to avoid wrapping */
+    private static final long NANO_ORIGIN = System.nanoTime();
+
+    /**
+     * Returns nanosecond time offset by origin
+     */
+    final static long now() {
+        return System.nanoTime() - NANO_ORIGIN;
     }
 
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span>() {
-        <span class="hljs-keyword">try</span> {
-            <span class="hljs-comment">// 从此信号量获取给定数目的许可</span>
-            pool.getSp().acquire(x);
-            <span class="hljs-comment">// todo：也许这里可以做更复杂的业务</span>
-            System.out.println(threadname + <span class="hljs-string">"成功获取了"</span> + x + <span class="hljs-string">"个许可！"</span>);
-        } <span class="hljs-keyword">catch</span> (InterruptedException e) {
-            e.printStackTrace();
-        } <span class="hljs-keyword">finally</span> {
-            <span class="hljs-comment">// 释放给定数目的许可，将其返回到信号量。</span>
-            pool.getSp().release(x);
-            System.out.println(threadname + <span class="hljs-string">"释放了"</span> + x + <span class="hljs-string">"个许可！"</span>);
+    /**
+     * Sequence number to break scheduling ties, and in turn to guarantee FIFO order among tied
+     * entries.
+     */
+    private static final AtomicLong sequencer = new AtomicLong(0);
+
+    /** Sequence number to break ties FIFO */
+    private final long sequenceNumber;
+
+    /** The time the task is enabled to execute in nanoTime units */
+    private final long time;
+
+    private final T item;
+
+    public DelayItem(T submit, long timeout) {
+        this.time = now() + timeout;
+        this.item = submit;
+        this.sequenceNumber = sequencer.getAndIncrement();
+    }
+
+    public T getItem() {
+        return this.item;
+    }
+
+    public long getDelay(TimeUnit unit) {
+        long d = unit.convert(time - now(), TimeUnit.NANOSECONDS);
+        return d;
+    }
+
+    public int compareTo(Delayed other) {
+        if (other == this) // compare zero ONLY if same object
+            return 0;
+        if (other instanceof DelayItem) {
+            DelayItem x = (DelayItem) other;
+            long diff = time - x.time;
+            if (diff &lt; 0)
+                return -1;
+            else if (diff &gt; 0)
+                return 1;
+            else if (sequenceNumber &lt; x.sequenceNumber)
+                return -1;
+            else
+                return 1;
+        }
+        long d = (getDelay(TimeUnit.NANOSECONDS) - other.getDelay(TimeUnit.NANOSECONDS));
+        return (d == 0) ? 0 : ((d &lt; 0) ? -1 : 1);
+    }
+}
+</code></pre>
+<p>以下是Cache的实现，包括了put和get方法，还包括了可执行的main函数。</p>
+<pre><code>import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.DelayQueue;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class Cache&lt;K, V&gt; {
+    private static final Logger LOG = Logger.getLogger(Cache.class.getName());
+
+    private ConcurrentMap&lt;K, V&gt; cacheObjMap = new ConcurrentHashMap&lt;K, V&gt;();
+
+    private DelayQueue&lt;DelayItem&lt;Pair&lt;K, V&gt;&gt;&gt; q = new DelayQueue&lt;DelayItem&lt;Pair&lt;K, V&gt;&gt;&gt;();
+
+    private Thread daemonThread;
+
+    public Cache() {
+
+        Runnable daemonTask = new Runnable() {
+            public void run() {
+                daemonCheck();
+            }
+        };
+
+        daemonThread = new Thread(daemonTask);
+        daemonThread.setDaemon(true);
+        daemonThread.setName(&quot;Cache Daemon&quot;);
+        daemonThread.start();
+    }
+
+    private void daemonCheck() {
+
+        if (LOG.isLoggable(Level.INFO))
+            LOG.info(&quot;cache service started.&quot;);
+
+        for (;;) {
+            try {
+                DelayItem&lt;Pair&lt;K, V&gt;&gt; delayItem = q.take();
+                if (delayItem != null) {
+                    // 超时对象处理
+                    Pair&lt;K, V&gt; pair = delayItem.getItem();
+                    cacheObjMap.remove(pair.first, pair.second); // compare and remove
+                }
+            } catch (InterruptedException e) {
+                if (LOG.isLoggable(Level.SEVERE))
+                    LOG.log(Level.SEVERE, e.getMessage(), e);
+                break;
+            }
+        }
+
+        if (LOG.isLoggable(Level.INFO))
+            LOG.info(&quot;cache service stopped.&quot;);
+    }
+
+    // 添加缓存对象
+    public void put(K key, V value, long time, TimeUnit unit) {
+        V oldValue = cacheObjMap.put(key, value);
+        if (oldValue != null)
+            q.remove(key);
+
+        long nanoTime = TimeUnit.NANOSECONDS.convert(time, unit);
+        q.put(new DelayItem&lt;Pair&lt;K, V&gt;&gt;(new Pair&lt;K, V&gt;(key, value), nanoTime));
+    }
+
+    public V get(K key) {
+        return cacheObjMap.get(key);
+    }
+
+    // 测试入口函数
+    public static void main(String[] args) throws Exception {
+        Cache&lt;Integer, String&gt; cache = new Cache&lt;Integer, String&gt;();
+        cache.put(1, &quot;aaaa&quot;, 3, TimeUnit.SECONDS);
+
+        Thread.sleep(1000 * 2);
+        {
+            String str = cache.get(1);
+            System.out.println(str);
+        }
+
+        Thread.sleep(1000 * 2);
+        {
+            String str = cache.get(1);
+            System.out.println(str);
         }
     }
 }
-</code></pre>
-<pre><code>结果：
-任务A成功获取了3个许可！
-任务B成功获取了12个许可！
-任务A释放了3个许可！
-任务B释放了12个许可！
-任务C成功获取了7个许可！
-任务C释放了7个许可！
-</code></pre>
+</code></pre><p>运行Sample，main函数执行的结果是输出两行，第一行为aaa，第二行为null。</p>
+
                     
                     </section>
                 
@@ -950,10 +1100,10 @@ class MyThread extends Thread {
         </div>
 
         
-        <a href="../Chapter06/CyclicBarrier-CountDownLatch.html" class="navigation navigation-prev " aria-label="Previous page: 栅栏CyclicBarrier与计数器CountDownLatch"><i class="fa fa-angle-left"></i></a>
+        <a href="../Chapter01/Deque.html" class="navigation navigation-prev " aria-label="Previous page: 并发Deque"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../Chapter07/README.html" class="navigation navigation-next " aria-label="Next page: ThreadLocal"><i class="fa fa-angle-right"></i></a>
+        <a href="../Chapter01/More.html" class="navigation navigation-next " aria-label="Next page: 更多阅读"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

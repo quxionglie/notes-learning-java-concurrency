@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1403621677875
+# Revision 1403622298808
 
 CACHE:
 Chapter08/Future.html
@@ -31,6 +31,7 @@ Chapter07/Example.html
 Chapter07/README.html
 Chapter07/jdk1.5ScourceCode.html
 Chapter01/CommonSet.html
+Chapter01/DelayQueue.html
 Chapter01/Deque.html
 Chapter01/More.html
 Chapter01/Queue.html
