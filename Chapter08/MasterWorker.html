@@ -16,7 +16,7 @@
         
     
     
-    <meta name="author" content="xionglie">
+    <meta name="author" content="quxionglie">
     
     
     <link rel="next" href="../Chapter08/GuardedSuspension.html" />
@@ -34,12 +34,12 @@
 
 
         
-    <div class="book" data-github="xionglie/notes-learning-java-concurrency" data-level="8.2" data-basepath=".." data-revision="1403622298807">
+    <div class="book" data-github="quxionglie/notes-learning-java-concurrency" data-level="8.2" data-basepath=".." data-revision="1427342267691">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
     
-    <a href="https://github.com/xionglie/notes-learning-java-concurrency" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
+    <a href="https://github.com/quxionglie/notes-learning-java-concurrency" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
     
     <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
     <span id="font-settings-wrapper">
@@ -82,8 +82,8 @@
     
 
     
-    <a href="https://github.com/xionglie/notes-learning-java-concurrency/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/xionglie/notes-learning-java-concurrency/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+    <a href="https://github.com/quxionglie/notes-learning-java-concurrency/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/quxionglie/notes-learning-java-concurrency/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     
 
     <!-- Title -->
@@ -104,21 +104,21 @@
         
         
         <li>
-            <a href="https://github.com/xionglie" target="blank" class="author-link">About the author</a>
+            <a href="https://github.com/quxionglie" target="blank" class="author-link">About the author</a>
         </li>
         
 
         
         
         <li>
-            <a href="https://github.com/xionglie/notes-learning-java-concurrency/issues" target="blank"class="issues-link">Questions and Issues</a>
+            <a href="https://github.com/quxionglie/notes-learning-java-concurrency/issues" target="blank"class="issues-link">Questions and Issues</a>
         </li>
         
 
         
         
         <li>
-            <a href="https://github.com/xionglie/notes-learning-java-concurrency/edit/master/Chapter08/MasterWorker.md" target="blank" class="contribute-link">Edit and Contribute</a>
+            <a href="https://github.com/quxionglie/notes-learning-java-concurrency/edit/master/Chapter08/MasterWorker.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
 
@@ -856,7 +856,7 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_4">
+                    <section class="normal" id="section-gitbook_33">
                     
                         <h1 id="master-worker-">Master-Worker模式</h1>
 <p>Master-Worker模式是常用的并行模式。它的核心思想是，系统由两类进程协作工作：Master进程，Worker进程。Master进程负责接收和分配任务，worker进程负责处理子任务。当各个Worker进程将子任务处理完成后，将结果返回给Master进程，由Master进程做归纳和汇总，从而得到系统的最终结果。</p>

@@ -16,7 +16,7 @@
         
     
     
-    <meta name="author" content="xionglie">
+    <meta name="author" content="quxionglie">
     
     
     <link rel="next" href="../Chapter01/More.html" />
@@ -34,12 +34,12 @@
 
 
         
-    <div class="book" data-github="xionglie/notes-learning-java-concurrency" data-level="1.5" data-basepath=".." data-revision="1403622298807">
+    <div class="book" data-github="quxionglie/notes-learning-java-concurrency" data-level="1.5" data-basepath=".." data-revision="1427342267691">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
     
-    <a href="https://github.com/xionglie/notes-learning-java-concurrency" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
+    <a href="https://github.com/quxionglie/notes-learning-java-concurrency" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
     
     <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
     <span id="font-settings-wrapper">
@@ -82,8 +82,8 @@
     
 
     
-    <a href="https://github.com/xionglie/notes-learning-java-concurrency/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/xionglie/notes-learning-java-concurrency/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+    <a href="https://github.com/quxionglie/notes-learning-java-concurrency/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/quxionglie/notes-learning-java-concurrency/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     
 
     <!-- Title -->
@@ -104,21 +104,21 @@
         
         
         <li>
-            <a href="https://github.com/xionglie" target="blank" class="author-link">About the author</a>
+            <a href="https://github.com/quxionglie" target="blank" class="author-link">About the author</a>
         </li>
         
 
         
         
         <li>
-            <a href="https://github.com/xionglie/notes-learning-java-concurrency/issues" target="blank"class="issues-link">Questions and Issues</a>
+            <a href="https://github.com/quxionglie/notes-learning-java-concurrency/issues" target="blank"class="issues-link">Questions and Issues</a>
         </li>
         
 
         
         
         <li>
-            <a href="https://github.com/xionglie/notes-learning-java-concurrency/edit/master/Chapter01/DelayQueue.md" target="blank" class="contribute-link">Edit and Contribute</a>
+            <a href="https://github.com/quxionglie/notes-learning-java-concurrency/edit/master/Chapter01/DelayQueue.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
 
@@ -856,14 +856,14 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_30">
+                    <section class="normal" id="section-gitbook_24">
                     
                         <h1 id="-delayqueue">精巧好用的DelayQueue</h1>
 <p>原文：<a href="http://www.cnblogs.com/jobs/archive/2007/04/27/730255.html" target="_blank">http://www.cnblogs.com/jobs/archive/2007/04/27/730255.html</a></p>
 <p>我们谈一下实际的场景吧。我们在开发中，有如下场景</p>
-<p>a) 关闭空闲连接。服务器中，有很多客户端的连接，空闲一段时间之后需要关闭之。
-b) 缓存。缓存中的对象，超过了空闲时间，需要从缓存中移出。
-c) 任务超时处理。在网络协议滑动窗口请求应答式交互时，处理超时未响应的请求。</p>
+<p>a) 关闭空闲连接。服务器中，有很多客户端的连接，空闲一段时间之后需要关闭之。</p>
+<p>b) 缓存。缓存中的对象，超过了空闲时间，需要从缓存中移出。</p>
+<p>c) 任务超时处理。在网络协议滑动窗口请求应答式交互时，处理超时未响应的请求。</p>
 <p>一种笨笨的办法就是，使用一个后台线程，遍历所有对象，挨个检查。这种笨笨的办法简单好用，但是对象数量过多时，可能存在性能问题，检查间隔时间不好设置，间隔时间过大，影响精确度，多小则存在效率问题。而且做不到按超时的时间顺序处理。 </p>
 <p>这场景，使用DelayQueue最适合了。</p>
 <p>DelayQueue是一个BlockingQueue，其特化的参数是Delayed。（不了解BlockingQueue的同学，先去了解BlockingQueue再看本文）
